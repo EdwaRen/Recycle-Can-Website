@@ -2,8 +2,12 @@
        * element that contains the map. */
 
 #map {
-    height: 80%;
-    width: 80%;
+    height: 500px;
+    width: 1000px;
+}
+#map2 {
+    height: 500px;
+    width: 1000px;
 }
 
 
@@ -46,6 +50,14 @@ html,
     font-family: RalewayThn;
     src: url("../extra/Raleway/Raleway-Thin.ttf");
 }
+@font-face {
+    font-family: OpenThn;
+    src: url("../extra/Open_Sans/Open_Sans-Light.ttf");
+}
+@font-face {
+    font-family: OpenBld;
+    src: url("../extra/Open_Sans/Open_Sans-ExtraBold.ttf");
+}
 
 html {
     overflow: scroll;
@@ -78,6 +90,11 @@ section:nth-of-type(2) {
     background: black;
     height: 500px;
 }
+
+#firstHeading{
+    font-size: 20px;
+}
+
 
 #headerImg>div:nth-of-type(1) {
     background: url(../Images/RecycleBackground1.jpg) no-repeat fixed;
@@ -149,7 +166,7 @@ div.img a:hover img {
 
 div.desc {
     text-align: center;
-    font-weight: normal;
+    font-weight: lighter;
     width: 120px;
     margin: 5px;
 }
@@ -166,6 +183,13 @@ th {
 
 tr.classname {
     margin-bottom: 5px;
+}
+
+#myTextbox {
+    font-size: 40px;
+    height: 50px;
+    width: 500px;
+    
 }
 
 #gallerybackground {
@@ -224,18 +248,28 @@ tr.classname {
     background-color: #F7F7F7;
     width: 100%;
     position: fixed;
-    box-shadow: 0px 3px 10px 4px #000000;
+    box-shadow: 0px 3px 10px 4px #5c5c5c;
     z-index: 101;
     float: bottom;
 }
 
 #logodiv {
     padding-top: 0px;
-    padding-left: 20px;
+/*    padding-left: 20px;*/
     width: 330px;
     height: 120px;
     float: left;
     display: inline-block z-index:101;
+    color: #FFFFFF
+}
+#logodiv2 {
+    padding-top: 0px;
+/*    padding-left: 20px;*/
+    width: 100%;
+    height: 120px;
+    float: left;
+    display: inline-block z-index:101;
+    color: #FFFFFF
 }
 
 #Logoback {
@@ -245,7 +279,9 @@ tr.classname {
     background-color: #F7F7F7;
     width: 400px;
     height: 120px;
-    z-index: -1;
+    z-index: -1;  
+    text-align: center;
+
 }
 
 #window {
@@ -355,11 +391,11 @@ h2 span {
     z-index: 20;
 }
 
-#overviewG {
+#overviewE {
     overflow: hidden;
     box-shadow: 0px -3px 10px 1px #333333;
     width: 100%;
-    height: 1800px;
+    height: 1500px;
     background-color: #FFFFFF;
     font-style: FuturaKoya, Sans-Serif;
     font-size: 0;
@@ -404,7 +440,7 @@ h2 span {
 #overviewI {
     box-shadow: 0px -3px 10px 1px #333333;
     width: 100%;
-    height: 2200px;
+    height: 1700px;
     background-color: #FFFFFF;
     font-style: FuturaKoya, Sans-Serif;
     font-size: 0;
@@ -477,7 +513,7 @@ h2 span {
 
 #Drawing3 {
     float: right;
-    width: 400px;
+   width: 400px;
     height: 400px;
 }
 
@@ -630,14 +666,21 @@ h2 span {
 #header3 p {
     padding-left: 00px;
     padding-right: 0px;
-    font-family: Delicious4, Sans-Serif;
+    font-weight: 100;
+    line-height: 140%;
+    letter-spacing: 0.1px; 
+
+    font-family: RalewayReg;
     font-size: 15px;
 }
 
 #header3 h1 {
     padding-left: 60px;
     padding-right: 60px;
-    font-family: Delicious4, Sans-Serif;
+    font-weight: 100;
+    letter-spacing: -1px; 
+    font-family: RalewayReg, Sans-Serif;
+    color: #5c5c5c;
     font-size: 20px;
 }
 

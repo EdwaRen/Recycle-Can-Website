@@ -1,95 +1,395 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+
+<html lang=''>
 
 <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <title>Simple markers</title>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/styles.css">
+
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="js/jquery.scrolly.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.parallax').scrolly({
+                bgParallax: true
+            });
+        });
+
+    </script>
+
+    <title>Zhong Art</title>
 </head>
 
+
+
 <body>
-    <div id="map"></div>
-    <script>
-        function initMap() {
-            var myLatLng = {
-                lat: -25.363,
-                lng: 131.044
-            };
-            var myLatLng2 = {
-                lat: -35.363,
-                lng: 141.044
-            };
 
-            var latList = [
-                -35.463, -45.463, -55.463, -65.463
-            ];
-            
-            var lngList = [
-                131.044, 141.044, 151.044, 161.044
-            ];
+    <div id="header">
 
+        <div id="fixedWidth">
 
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 4,
-                center: myLatLng
-            });
+            <div id="Logoback">
+            </div>
 
-            var contentString = '<div id="content">' +
-                '<div id="siteNotice">' +
-                '</div>' +
-                '<h1 id="firstHeading" class="firstHeading">Hello!</h1>' +
-                '<div id="bodyContent">' +
-                '<p><b>Ottawa</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
-                'sandstone rock formation in the southern part of the ' +
-                'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) ' +
-                'south west of the nearest large town, Alice Springs; 450&#160;km ' +
-                '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major ' +
-                'features of the Uluru - Kata Tjuta National Park. Uluru is ' +
-                'sacred to the Pitjantjatjara and Yankunytjatjara, the ' +
-                'Aboriginal people of the area. It has many springs, waterholes, ' +
-                'rock caves and ancient paintings. Uluru is listed as a World ' +
-                'Heritage Site.</p>' +
-                '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">' +
-                'https://en.wikipedia.org/w/index.php?title=Uluru</a> ' +
-                '(last visited June 22, 2009).</p>' +
-                '</div>' +
-                '</div>';
+            <div id="logodiv">
+                <a style="color:white; text-decoration:none" href="Index.html"> <img src="Images/Recycle_Ontario.png" alt="Image Not Found" width="100%" height="100%" position=f ixed/> </a>
 
-            var infowindow = new google.maps.InfoWindow({
-                content: contentString
-            });
+            </div>
 
-            for (var i = 0; i < latList.length; i++) {
-                var myPosition = {
-                    lat: latList[i],
-                    lng: lngList[i]
-                };
-                var marker = new google.maps.Marker({
-                    position: myPosition,
-                    map: map,
-                    title: 'MyPlace'
-                });
-            }
-            
-            
-            var marker = new google.maps.Marker({
-                position: myLatLng,
-                map: map,
-                title: 'Hello World!'
-            });
+            <div id="cssmenu">
+                <ul>
+                    <li><a href="Index.html"><span>Home</span></a></li>
+                    <li class="active"><a href="E-waste.html"><span>E-Waste</span></a></li>
+                    <li><a href="Gallery.html"><span>Batteries</span></a></li>
+                    <li><a href="Location.html"><span>Others</span></a></li>
+                    <li><a href="Contact.html"><span>About</span></a></li>
+                </ul>
+            </div>
 
-            marker.addListener('click', function() {
-                infowindow.open(map, marker);
-            });
+        </div>
 
-        }
-
-    </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHlW8YibL2zp7mdBSNeT81AYVaxHuOk3A&callback=initMap">
+    </div>
 
 
-    </script>
+    <section id="headerImg">
+        <article>
+            <div id="fixedWidth">
+            </div>
+        </article>
+
+        <div class="parallax" data-velocity="-.3"></div>
+        <div class="parallax" data-velocity="-.2" data-fit="525">
+            <div id="fixedWidth">
+                <div id="window">
+                    <div id="textWindow">
+                        <h1> Find Your Local Household Hazardous Waste Collection Site. </h1>
+                        <h1> </h1>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <div id="overviewE">
+
+
+
+        <div id="fixedWidth">
+
+
+            <div id="desclong">
+                <div id="header3">
+                    <h1><b>Enter Your Postal Code To Begin</b>
+                        <h1>
+                            <input type="text" id="myTextbox" value="K1K2L2" maxlength="6" />
+
+                </div>
+            </div>
+        </div>
+
+
+        <div id="fixedWidth">
+
+            <div id="Drawing2Loc">
+                <div id="leftFill">
+
+                </div>
+                <div id="rightFill">
+                </div>
+            </div>
+
+
+        </div>
+
+        <p id="demo"></p>
+
+        <script>
+
+
+        </script>
+
+
+        <div id="fixedWidth">
+
+            <div id="map"></div>
+            <script>
+                var locations = [
+                    
+                    //Ottawa E-waste
+                    ['American Iron & Metal LP', 45.4061455, -75.6080374, '613-228-9380'],
+                    ['American Iron & Metal LP', 45.3340072, -75.7140466, '613-228-9380'],
+                    ['Bloom Microtech Ltd.', 45.4523899, -75.5921304, '613-748-3567'],
+                    ['CTOPE', 45.4379365, -75.858758, '819-776-5870'],
+                    ['Canadian Diabetes Association-Clothesline Program', 45.409729, -75.6282127, '613-746-4633'],
+                    ['EDI Inc.', 45.3358629, -75.801434, '613-726-3699'],
+                    ['Envirolaser', 45.346287, -75.7040961, '613-225-4726'],
+                    ['Habitat Restore', 45.330019, -75.7249127, '613-744-7769'],
+                    ['Habitat Restore', 45.4144044, -75.6433382, '613-744-7769'],
+                    ['Industry Canada - Computers for Schools Program ', 45.4379365, -75.720871, '613-998-1804'],
+                    ['J-Haul Enterprise Ltd.', 41.738508, -72.684300, '613-899-8343'],
+                    ['Office Equipment Specialists', 45.4333192, -75.6712286, '613-747-1070'],
+                    ['Progressive Waste Solutions Inc.', 45.3827919, -75.6024855, '613-737-7662'],
+                    ['Right Stop Computer Shop Inc.', 45.4197951, -75.6999233, '613-567-4015'],
+                    ['Salvation Army (Innes)', 	45.4558462, -75.5082483, '613-830-2783'],
+                    ['Salvation Army (Montreal Road)', 45.4379107, -75.6595532, '613-842-3938'],
+                    ['Salvation Army (Moodie Drive)	', 45.3256352, -75.8381915, '613-726-8891'],
+                    ['Salvation Army (Ogilvie Road)', 45.4519604, -75.6004714, '613-745-2881'],
+                    ['Salvation Army (Richmond Road)', 45.3619503, -75.7927047, '613-726-7136'],
+                    ['Satanda Solutions', 45.2561091, -75.7303596, '613-230-3923'],
+                    ['Staples Business Depot', 45.2707149, -75.7420421, '613-825-0457'],
+                    ['Staples Business Depot', 45.4303736, -75.6414668, '613-745-4773'],
+                    ['Staples Business Depot', 45.4585669, -75.4868256, '613-830-8100'],
+                    ['Staples Business Depot', 45.4131253, -75.6959606, '613-235-2525'],
+                    ['Staples Business Depot', 45.308301, -75.9196695, '613-592-3538'],
+                    ['Staples Business Depot', 45.1316915, -76.1197419, '613-253-2400'],
+                    ['Staples Business Depot', 45.3532951, -75.7351051, '613-226-7989'],
+                    ['Tomlinson Industrial Waste', 45.3037093, -75.5636287, '613-822-2700'],
+                    ['Valoritec', 45.4960221, -75.7064793, '819-568-2020'],
+                    ['Value Village', 45.3604251, -75.740539, '613-288-1390'],
+                    ['Value Village', 45.3710937, -75.6671344, '613-526-5551'],
+                    ['illFixit Wireless', 45.2958157, -75.8956709, '613-867-0695'],
+                    
+                    
+                    
+                    //Toronto E-waste + Batteries
+                    ['Computation Ltd.', 43.6312759, -79.5228315, '4169104358'],
+                    ['Computation Ltd.', 43.6557327, -79.489528, '4169104358'],
+                    ['Montage Support Services', 43.691796, -79.4428964, '4167809630'],
+                    ['Howard TV Stereo and Video Centre', 43.742428, -79.4370869, '416-636-4822'],
+                    ['Evergreen Brick Works', 43.6851471, -79.3769237, '4165961495'],
+                    ['Henrys', 43.652853, -79.3775295, '4168680872'],
+                    ['GFL Environmental Inc.', 43.6441161, -79.3581469, '4164062040 ext 4244'],
+                    
+                    //Everywhere Staples + Bestbuys
+                    ['Staples (Dundas)', 43.622159, -79.5694166, '905-279-4392'],
+                    ['Staples (Queensway)', 43.6153594,-79.564113, '416-620-5674'],
+                    ['Staples (Queens)', 43.7170377,-79.5942707, '416-749-9932'],
+                    ['Staples (Queen)', 43.7409674,-79.6991019, '905-791-4522'],
+                    ['Staples (Great Lakes)', 43.7328964,-79.7681391, '905-789-5799'],
+                    ['Staples (Brampton)', 43.6661759,-79.739797, '905-796-2403'],
+                    ['Staples (Dixie)', 43.638506,-79.6252323, '905-602-5889'],
+                    ['Staples (Mavis)', 43.6103558,-79.6971973, '905-813-3134'],
+                    ['Staples (Grand Park)', 43.5819742,-79.6504204, '905-306-7888'],
+                    ['Staples (Argentia)', 43.5963844,-79.7929052, '905-785-0864'],
+                    ['Staples (Winston Churchill)', 43.4882391,-79.7807229, '905-829-1960'],
+                    ['Staples (Steeles)', 43.5418687,-79.8729106, '905-878-2434'],
+                    ['Staples (Memorial)', 48.4132179,-89.2461743, '807-343-2506'],
+                    ['Staples (Sault Ste. Marie)',46.5366343,-84.3226438, '705-256-1466' ],
+                    ['Staples (Kingsway)', 46.5055438,-80.9416607, '705-524-6227'],
+                    ['Staples (Sudbury)', 46.5106856,-80.9918023, '705-525-1180'],
+                    ['Staples (Algonquin)', 46.3309977,-79.4707321, '705-472-7223'],
+                    ['Staples (Pembroke)', 45.8222828,-77.0863763, '613-735-0437'],
+                    ['Staples (King William)', 45.333597,-79.2075783, '705-789-5817'],
+                    ['Staples (Muskoka)', 45.0720143,-79.2363464, '705-646-2775'],
+                    ['Staples (Owen Sound)', 44.5587647,-80.9718821, '519-372-2228'],
+                    ['Staples (Collingwood)', 44.5022417,-80.2386872, '705-445-0505'],
+                    ['Staples (County)', 44.7043751,-79.974437, '705-526-5510'],
+                    ['Staples (Murphy)', 44.614568,-79.4568451, '705-329-3074'],
+                    ['Staples (Bayfield)', 44.4150108,-79.7202215, '705-735-4058'],
+                    ['Staples (Barrie View)', 44.3415723,-79.6986685, '705-733-3329' ],
+                    ['Staples (Woodbine)', 44.236027,-79.5807126, '905-989-2283'],
+                    ['Staples (Kent)', 44.3486588,-78.7595355, '705-328-3427'],
+                    ['Staples (Peterborough)', 44.2885142,-78.3265615, '705-741-1130'],
+                    ['Staples (Colonnade)', 45.0285556,-75.7944379, '613-258-5900'],
+                    ['Staples (Gardiners)', 44.2477597,-76.5809985, '613-634-2112'],
+                    ['Staples (Queen)', 44.2331022,-76.4853367, '613-542-3585'],
+                    ['Staples (Elgin)', 43.9706252,-78.200325, '905-377-0458'],
+                    ['Staples (Harwood)', 43.8601454,-79.0282474, '905-686-1422'],
+                    ['Staples (North Service)', 43.4438252,-79.7143051, '905-338-6535'],
+                    ['Staples (Davidson)', 43.3572852,-79.8082179, '905-332-1071'],
+                    ['Staples (Dundas)', 43.3148801,-79.9132204, '905-689-0271'],
+                    ['Staples (Barton)', 43.2525248,-79.8109661, '905-547-4778'],
+                    ['Staples (Wentworth)', 43.2179327,-79.8668643, '905-383-7913'],
+                    ['Staples (YMCA)', 43.1791707,-79.2483654, '905-937-4292'],
+                    ['Staples (Morrison)', 43.1028454,-79.1197778, '905-358-0650'],
+                    ['Staples (Welland)', 43.014081,-79.2513461, '905-714-7607'],
+                    ['Staples (King)', 43.5191621,-80.5779724, '519-888-1716'],
+                    ['Staples (Strasburg)', 43.4253759,-80.4913107, '519-571-7420'],
+                    ['Staples (Stratford)', 43.371491,-80.9489061, '519-273-5305'],
+                    ['Staples (Broadway)', 42.863127,-80.7314394, '519-688-2196'],
+                    ['Staples (Wellington)', 42.9627096,-81.2328919, '519-645-7042'],
+                    ['Staples (Dundas)', 43.0045709,-81.174703, '519-659-3428'],
+                    ['Staples (Richmond)', 43.0276894,-81.2865729, '519-661-0888'],
+                    ['Staples (Wonderland)', 42.9342144,-81.2865147, '519-690-2049'],
+                    ['Staples (Caradoc)', 42.9472387,-81.6143705, '519-245-5665'],
+                    ['Staples (Sarnia)', 42.9794035,-82.3547519, '519-542-4461'],
+                    ['Staples (St Clair)', 42.4244816,-82.2295514, '519-360-1344'],
+                    ['Staples (Tecumseh)', 42.3148867,-82.9552466, '519-948-1283'],
+                    ['Staples (Ouellette)', 42.2838604,-83.0185234,'519-966-9495'],
+                    ['Staples (Walker)', 42.2838604,-83.0185234, '519-972-5127'],
+                    ['Staples (Seacliff)', 42.0332444,-82.6017757, '519-324-1370'],
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    //Toronto Only E-waste
+                    ['Salvation Army - Toronto Parkdale Thrift Store', 43.6400587, -79.4395666, '416-536-3361'],
+                    ['Staples (Stock Yards)', 43.670491, -79.4686089, '416.762.2816'],
+                    ['SELF Solutions Lab', 43.6648818, -79.4934539, '416-558-7035'], 
+                    ['SELF Solutions Lab', 43.6961907, -79.4487795, '416-558-7035'],
+                    ['Salvation Army - Toronto Weston Thrift Store', 43.7012193, -79.505111, '416-247-0505'],
+                    ['Staples (Dufferin Street)', 43.7172731, -79.4584292, '416-785-5335'],
+                    ['Best Buy Canada - Downsview (Wilson Ave)', 43.7321345, -79.4568804, '(416) 635-6574'],
+                    ['Salvation Army - Scarborough West', 43.7252098, -79.2968082, '416-752-2929'],
+                    ['Staples (Eglinton Avenue)', 43.7141535, -79.3605171, '416-696-0043'],
+                    ['Best Buy Canada - Leaside (Laird Dr)', 43.7094623, -79.3646043, '(647) 777-3196'],
+                    ['Best Buy - Yonge & Eglinton (Yonge Street)', 43.7101939, -79.401772, '(416) 489-4726'],
+                    ['Staples (Danforth Avenue)', 43.6899912, -79.291547, '416-686-4711'],
+                    ['Staples (Gerrard Square)', 43.6697016, -79.341784, '416-466-4900'],
+                    ['Staples (Front Street East)', 43.6517219, -79.366047, '416-368-3331'], 
+                    ['Best Buy Canada - Bay & Dundas (Toronto Eaton Centre)', 43.655556, -79.3848541, '(416) 642-8321'],
+                    ['Staples (University)', 43.6550146,-79.3901208, '416-598-4818']
+                    
+
+                ]
+                //                var contentString = '<div id="content">' +
+                //                    '<div id="siteNotice">' +
+                //                    '</div>' +
+                //                    '<h1 id="firstHeading">' + locations[0][0] + '</h1>' +
+                //                    '<div id="bodyContent">' +
+                //                    '<p>' + locations[0][3] + '</p>' +
+                //                    '</div>' +
+                //                    '</div>';
+                //                //var contentStrings = '<div id = "content">' + 'locations[0][0]'
+
+
+                var x = document.getElementById("demo");
+                var localLat = 0;
+                var localLng = 0;
+
+                function initMap() {
+                    var mapOptions = {
+                        center: new google.maps.LatLng(45.4235937, -75.7031177),
+                        zoom: 11,
+                    }
+                    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+                    var parliamentPos = {
+                        lat: 45.4235937,
+                        lng: -75.7031177
+                    };
+
+                 
+
+
+                    for (var i = 0; i < locations.length; i++) {
+                        var myPosition = {
+                            lat: locations[i][1],
+                            lng: locations[i][2]
+                        };
+                        var marker = new google.maps.Marker({
+                            position: myPosition,
+                            map: map,
+                            title: 'MyPlace'
+                        });
+                        var contentString = '<div id="content">' +
+                            '<div id="siteNotice">' +
+                            '</div>' +
+                            '<h1 id="firstHeading">' + locations[i][0] + '</h1>' +
+                            '<div id="bodyContent">' +
+                            '<p>' + locations[i][3] + '</p>' +
+                            '</div>' +
+                            '</div>';
+                        var infowindow = new google.maps.InfoWindow({
+                            content: contentString
+                        });
+
+                        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                            return function() {
+                                var contentString2 = '<div id="content">' +
+                                    '<div id="siteNotice">' +
+                                    '</div>' +
+                                    '<h1 id="firstHeading">' + locations[i][0] + '</h1>' +
+                                    '<div id="bodyContent">' +
+                                    '<p>' + locations[i][3] + '</p>' +
+                                    '</div>' +
+                                    '</div>';
+                                infowindow.setContent(contentString2);
+                                infowindow.open(map, marker);
+                            }
+                        })(marker, i));
+
+                        //                        marker.addListener('click', function() {
+                        //                            infowindow.open(map, marker);
+                        //                        });
+                    }
+
+
+                    if (navigator.geolocation) {
+                        navigator.geolocation.getCurrentPosition(showPosition);
+                    } else {
+
+                    }
+
+
+                    function showPosition(position) {
+                        x.innerHTML = "Lat: " + position.coords.latitude +
+                            "<br>Lng: " + position.coords.longitude;
+                        localLat = position.coords.latitude;
+                        console.log(localLat);
+                        localLng = position.coords.longitude;
+                        var myLatLng = {
+                            lat: localLat,
+                            lng: localLng
+                        };
+                        map.setCenter(new google.maps.LatLng(localLat, localLng));
+                    }
+
+
+                    //                    var marker = new google.maps.Marker({
+                    //                        position: myLatLng,
+                    //                        map: map,
+                    //                        title: 'Hello World!'
+                    //                    });
+                    //
+                    //                    marker.addListener('click', function() {
+                    //                        infowindow.open(map, marker);
+                    //                    });
+
+                }
+
+            </script>
+
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHlW8YibL2zp7mdBSNeT81AYVaxHuOk3A&callback=initMap">
+
+
+            </script>
+
+
+        </div>
+        <div id="fixedwidth">
+            <div id="footer">
+                <div id="logodiv2">
+                    <a href='Index.html'>
+                        <p></p>
+                    </a>
+
+                    <a href='Index.html'><img src="Images/Recycle_Ontario_Light.png" width="240px " height="80px " /></a>
+                    <a href='Index.html'>
+                        <p>Back to Top</p>
+                    </a>
+                    <a href='Index.html'>
+                        <p>Home</p>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
 </body>
 
 </html>
