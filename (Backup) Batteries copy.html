@@ -1,0 +1,472 @@
+<!doctype html>
+
+<html lang=''>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="js/jquery.scrolly.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.parallax').scrolly({
+                bgParallax: true
+            });
+        });
+
+    </script>
+
+    <title>Zhong Art</title>
+</head>
+
+
+
+<body>
+
+    <div id="header">
+
+        <div id="fixedWidth">
+
+            <div id="Logoback">
+            </div>
+
+            <div id="logodiv">
+                <a style="color:white; text-decoration:none" href="Index.html"> <img src="Images/Recycle_Ontario.png" alt="Image Not Found" width="100%" height="100%" position=f ixed/> </a>
+
+            </div>
+
+            <div id="cssmenu">
+                <ul>
+                    <li><a href="Index.html"><span>Home</span></a></li>
+                    <li><a href="E-waste.html"><span>E-Waste</span></a></li>
+                    <li class="active"><a href="Batteries.html"><span>Batteries</span></a></li>
+                    <li><a href="Paint.html"><span>Paint</span></a></li>
+                    <li><a href="About.html"><span>About</span></a></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <section id="headerImg">
+        <article>
+            <div id="fixedWidth">
+            </div>
+        </article>
+
+        <div class="parallax" data-velocity="-.3"></div>
+        <div class="parallax" data-velocity="-.2" data-fit="525">
+            <div id="fixedWidth">
+                <div id="window">
+                    <div id="textWindow">
+                        <h1> Recycle Your Batteries </h1>
+                        <h1> </h1>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <div id="overviewE">
+
+
+
+        <div id="fixedWidth">
+
+
+            <div id="desclong">
+                <div id="header3">
+                    <h1><b>Enter Your Postal Code To Begin</b>
+                        <h1>
+                            <input type="text" id="myTextbox" value="K1K2L2" maxlength="6" />
+
+                </div>
+            </div>
+        </div>
+
+
+        <div id="fixedWidth">
+
+            <div id="Drawing2Loc">
+                <div id="leftFill">
+
+                </div>
+                <div id="rightFill">
+                </div>
+            </div>
+
+
+        </div>
+
+        <p id="demo"></p>
+
+        <script>
+
+
+        </script>
+
+
+        <div id="fixedWidth">
+
+            <div id="map"></div>
+            <script>
+                var locations = [
+
+                    //Ottawa E-waste
+                    ['100 Constellation', 45.3456964, -75.7637725, '311'],
+                    ['Alexander Battery Corporation', 41.8246049, -71.4288167, '613-230-7117'],
+                    ['Arcelor Mittal Ottawa Inc (Bakermet)', 46.5767404, -119.0592957, '613-745-6000'],
+                    ['Batteries Expert', 40.876434, -74.08105, '613-590-9352'],
+                    ['Ben Franklin Place Client Centre 5', 45.3446243, -75.762787, '311'],
+                    ['Bob MacQuarrie Recreation Complex', 45.4663461, -75.5448038, '6138240819'],
+                    ['Call2Recycle', 43.768332, -79.4134952, '1.888.224.9764'],
+                    ['Canadian Tire', 45.3792489, -75.7491367, '613-725-3111'],
+                    ['Canadian Tire', 45.4351947, -75.606432, '613-748-1117'],
+                    ['Canadian Tire', 45.3364075, -75.7266791, '613-224-9330'],
+                    ['Canadian Tire', 45.4522784, -75.5064723, '613-830-7000'],
+                    ['Canadian Tire', 39.8832457, -74.984702, '613-733-6776'],
+                    ['Canadian Tire', 45.3068951, -75.9185459, '613-599-5105'],
+                    ['CapitalJunk .ca', 45.324347, -75.722405, '613-825-0707'],
+                    ['Carls Waste Services', 45.3820693, -75.3517772, '613-835-3600'],
+                    ['City Hall', 41.9077585, -71.3713483, '311'],
+                    ['EDI Inc.', 39.9999613, -105.2545017, '613-726-3699'],
+                    ['Evolu-tic Outaouais', 45.4755275, -75.665239, '819-770-0103'],
+                    ['Glebe Community Centre', 40.6807462, -73.9838138, '311'],
+                    ['Goulbourn Recreation Complex', 36.2856695, -84.3487668, '311'],
+                    ['Home Hardware', 45.3739732, -75.6657336, '613-733-3492'],
+                    ['Ikea', 46.2761368, -119.3485623, '1-866-866-4532'],
+                    ['Interstate Battery Systems of Ottawa-Hull', 43.5377355, -89.4651362, '613-798-9700'],
+                    ['Just Junk Ottawa', 45.4312157, -75.6795303, '613-233-7870'],
+                    ['Kanata Wave Pool', 45.311678, -75.899897, '613-591-9283'],
+                    ['Lowes', 45.2890526, -75.906086, '613-836-3971'],
+                    ['Lowes', 45.3372604, -75.7138756, '613-274-3984'],
+                    ['Lowes (Innes Road)', 45.4508541, -75.5126839, '613-830-6370'],
+                    ['Orleans Client Centre', 45.4807315, -75.5098894, '311'],
+                    ['Personal Edge', 45.3721001, -75.7700915, '613-725-0173'],
+                    ['Preston Hardware', 45.4049633, -75.7122894, '613-230-7166'],
+                    ['RONA Home & Garden', 45.4163785, -75.5981191, '613-741-6331'],
+                    ['RONA Home & Garden', 45.3351473, -75.7302888, '613-226-5636'],
+                    ['Ray Friel Community Centre', 45.4715484, -75.4932321, '311'],
+                    ['Staples Business Depot', 45.3532951, -75.7329164, '613-226-7989'],
+                    ['Staples Business Depot', 35.586612, -80.874262, '613-825-0457'],
+                    ['Staples Business Depot', 45.308301, -75.9174808, '613-592-3538'],
+                    ['Staples Business Depot', 45.4585669, -75.4846369, '613-830-8100'],
+                    ['Staples Business Depot', 45.3547846, -75.6548762, '613-521-3030'],
+                    ['Staples Business Depot', 45.1316915, -76.1175532, '613-253-2400'],
+                    ['Staples Business Depot', 30.3063578, -81.7030968, '613-745-4773'],
+                    ['Staples Business Depot', 45.4131253, -75.6937719, '613-235-2525'],
+                    ['The Home Depot Canada', 39.999798, -105.268455, '613-723-5900'],
+                    ['The Home Depot Canada', 45.2670193, -75.7512009, '613-843-7900'],
+                    ['The Home Depot Canada', 45.3643463, -75.6605302, '613-739-5300'],
+                    ['The Home Depot Canada', 45.4172108, -75.6098243, '613-744-1700'],
+                    ['The Home Depot Canada', 45.459985, -75.483356, '613-590-2030'],
+                    ['The Home Depot Canada', 45.301982, -75.9171199, '613-271-7577'],
+                    ['The Source by Circuit City', 45.421652, -75.638917, '613-744-2139'],
+                    ['The Source by Circuit City', 45.415492, -75.696784, '613-238-9859'],
+                    ['The Source by Circuit City', 45.3721001, -75.7700915, '613-722-6052'],
+                    ['The Source by Circuit City', 45.3859731, -75.6779533, '613-737-1079'],
+                    ['The Source by Circuit City', 45.3564256, -75.6560207, '613-733-1891'],
+                    ['The Source by Circuit City', 45.3021648, -75.8778107, '613-254-7298'],
+                    ['The Source by Circuit City', 45.2697988, -75.7412208, '613-823-1995'],
+                    ['The Source by Circuit City', 45.3471994, -75.8067581, '613-820-6194'],
+                    ['The Source by Circuit City', 45.3454751, -75.7317849, '613-224-9648'],
+                    ['Total Battery', 40.400835, -74.3600563, '613-225-1888'],
+                    ['Total Battery', 45.4100066, -75.6231538, '613-747-2666'],
+                    ['Vanier Pharmacy & Natural Health', 45.4387455, -75.6550764, '613-746-8102'],
+                    ['Walter Baker Centre', 40.509459, -89.024057, '311'],
+
+                   
+
+
+
+                    //Toronto E-waste + Batteries
+                    ['Computation Ltd.', 43.6312759, -79.5228315, '4169104358'],
+                    ['Computation Ltd.', 43.6557327, -79.489528, '4169104358'],
+                    ['Montage Support Services', 43.691796, -79.4428964, '4167809630'],
+                    ['Howard TV Stereo and Video Centre', 43.742428, -79.4370869, '416-636-4822'],
+                    ['Evergreen Brick Works', 43.6851471, -79.3769237, '4165961495'],
+                    ['Henrys', 43.652853, -79.3775295, '4168680872'],
+                    ['GFL Environmental Inc.', 43.6441161, -79.3581469, '4164062040 ext 4244'],
+
+                    //Everywhere Staples + Bestbuys
+                    ['Staples (Dundas)', 43.622159, -79.5694166, '905-279-4392'],
+                    ['Staples (Queensway)', 43.6153594, -79.564113, '416-620-5674'],
+                    ['Staples (Queens)', 43.7170377, -79.5942707, '416-749-9932'],
+                    ['Staples (Queen)', 43.7409674, -79.6991019, '905-791-4522'],
+                    ['Staples (Great Lakes)', 43.7328964, -79.7681391, '905-789-5799'],
+                    ['Staples (Brampton)', 43.6661759, -79.739797, '905-796-2403'],
+                    ['Staples (Dixie)', 43.638506, -79.6252323, '905-602-5889'],
+                    ['Staples (Mavis)', 43.6103558, -79.6971973, '905-813-3134'],
+                    ['Staples (Grand Park)', 43.5819742, -79.6504204, '905-306-7888'],
+                    ['Staples (Argentia)', 43.5963844, -79.7929052, '905-785-0864'],
+                    ['Staples (Winston Churchill)', 43.4882391, -79.7807229, '905-829-1960'],
+                    ['Staples (Steeles)', 43.5418687, -79.8729106, '905-878-2434'],
+                    ['Staples (Memorial)', 48.4132179, -89.2461743, '807-343-2506'],
+                    ['Staples (Sault Ste. Marie)', 46.5366343, -84.3226438, '705-256-1466'],
+                    ['Staples (Kingsway)', 46.5055438, -80.9416607, '705-524-6227'],
+                    ['Staples (Sudbury)', 46.5106856, -80.9918023, '705-525-1180'],
+                    ['Staples (Algonquin)', 46.3309977, -79.4707321, '705-472-7223'],
+                    ['Staples (Pembroke)', 45.8222828, -77.0863763, '613-735-0437'],
+                    ['Staples (King William)', 45.333597, -79.2075783, '705-789-5817'],
+                    ['Staples (Muskoka)', 45.0720143, -79.2363464, '705-646-2775'],
+                    ['Staples (Owen Sound)', 44.5587647, -80.9718821, '519-372-2228'],
+                    ['Staples (Collingwood)', 44.5022417, -80.2386872, '705-445-0505'],
+                    ['Staples (County)', 44.7043751, -79.974437, '705-526-5510'],
+                    ['Staples (Murphy)', 44.614568, -79.4568451, '705-329-3074'],
+                    ['Staples (Bayfield)', 44.4150108, -79.7202215, '705-735-4058'],
+                    ['Staples (Barrie View)', 44.3415723, -79.6986685, '705-733-3329'],
+                    ['Staples (Woodbine)', 44.236027, -79.5807126, '905-989-2283'],
+                    ['Staples (Kent)', 44.3486588, -78.7595355, '705-328-3427'],
+                    ['Staples (Peterborough)', 44.2885142, -78.3265615, '705-741-1130'],
+                    ['Staples (Colonnade)', 45.0285556, -75.7944379, '613-258-5900'],
+                    ['Staples (Gardiners)', 44.2477597, -76.5809985, '613-634-2112'],
+                    ['Staples (Queen)', 44.2331022, -76.4853367, '613-542-3585'],
+                    ['Staples (Elgin)', 43.9706252, -78.200325, '905-377-0458'],
+                    ['Staples (Harwood)', 43.8601454, -79.0282474, '905-686-1422'],
+                    ['Staples (North Service)', 43.4438252, -79.7143051, '905-338-6535'],
+                    ['Staples (Davidson)', 43.3572852, -79.8082179, '905-332-1071'],
+                    ['Staples (Dundas)', 43.3148801, -79.9132204, '905-689-0271'],
+                    ['Staples (Barton)', 43.2525248, -79.8109661, '905-547-4778'],
+                    ['Staples (Wentworth)', 43.2179327, -79.8668643, '905-383-7913'],
+                    ['Staples (YMCA)', 43.1791707, -79.2483654, '905-937-4292'],
+                    ['Staples (Morrison)', 43.1028454, -79.1197778, '905-358-0650'],
+                    ['Staples (Welland)', 43.014081, -79.2513461, '905-714-7607'],
+                    ['Staples (King)', 43.5191621, -80.5779724, '519-888-1716'],
+                    ['Staples (Strasburg)', 43.4253759, -80.4913107, '519-571-7420'],
+                    ['Staples (Stratford)', 43.371491, -80.9489061, '519-273-5305'],
+                    ['Staples (Broadway)', 42.863127, -80.7314394, '519-688-2196'],
+                    ['Staples (Wellington)', 42.9627096, -81.2328919, '519-645-7042'],
+                    ['Staples (Dundas)', 43.0045709, -81.174703, '519-659-3428'],
+                    ['Staples (Richmond)', 43.0276894, -81.2865729, '519-661-0888'],
+                    ['Staples (Wonderland)', 42.9342144, -81.2865147, '519-690-2049'],
+                    ['Staples (Caradoc)', 42.9472387, -81.6143705, '519-245-5665'],
+                    ['Staples (Sarnia)', 42.9794035, -82.3547519, '519-542-4461'],
+                    ['Staples (St Clair)', 42.4244816, -82.2295514, '519-360-1344'],
+                    ['Staples (Tecumseh)', 42.3148867, -82.9552466, '519-948-1283'],
+                    ['Staples (Ouellette)', 42.2838604, -83.0185234, '519-966-9495'],
+                    ['Staples (Walker)', 42.2838604, -83.0185234, '519-972-5127'],
+                    ['Staples (Seacliff)', 42.0332444, -82.6017757, '519-324-1370'],
+                    ['Staples (Memorial)', 48.4132179, -89.246185, '807-343-2506'],
+
+
+                    ['Best Buy (Gardiners)', 44.2477597, -76.5810414, '613-887-2599'],
+                    ['Best Buy (Bell)', 44.1877602, -77.412817, '613-962-3495'],
+                    ['Best Buy (Landsowne)', 44.2784573, -78.3549846, '705-741-2081'],
+                    ['Best Buy (Monarch)', 44.6081665, -79.4595894, '705-325-0519'],
+                    ['Best Buy (Concert)', 44.365817, -79.6981559, '705-797-5330'],
+                    ['Best Buy (Victoria)', 43.8669091, -78.9032536, '905-674-1055'],
+                    ['Best Buy (Green)', 44.06985, -79.5005529, '905-954-1262'],
+                    ['Best Buy (Kingston)', 43.8758502, -79.0832018, '905-619-6977'],
+                    ['Best Buy (First Commerce)', 44.0138354, -79.4215281, '905-751-1114'],
+                    ['Best Buy (Markham)', 43.8682665, -79.2940488, '905-754-3025'],
+                    ['Best Buy (High Tech)', 43.842948, -79.4159024, '905-695-3906'],
+                    ['Best Buy (Progress)', 43.7774575, -79.2636445, '416-296-7020'],
+                    ['Best Buy (Dundas)', 43.655556, -79.3848594, '416-642-8321'],
+                    ['Best Buy (Laird)', 43.7094623, -79.3646097, '647-777-3196'],
+                    ['Best Buy (Young)', 43.7101939, -79.4017774, '416-489-4726'],
+                    ['Best Buy (Young II)', 43.7681431, -79.4487839, '416-642-7980'],
+                    ['Best Buy (Wilson)', 43.7321345, -79.4579801, '416-635-6574'],
+                    ['Best Buy (Weston)', 43.7918485, -79.5516022, '905-264-3191'],
+                    ['Best Buy (N. Queen)', 43.6171068, -79.5594375, '647-288-2300'],
+                    ['Best Buy (Peel Centre)', 43.7140015, -79.7248799, '905-494-2179'],
+                    ['Best Buy (Mavis)', 43.6145375, -79.6984622, '905-361-8251'],
+                    ['Best Buy (Maple)', 43.5371049, -79.8768633, '905-693-8601'],
+                    ['Best Buy (Winston Park)', 43.5167225, -79.6886382, '905-829-2034'],
+                    ['Best Buy (Guelph)', 43.3479495, -79.7983553, '289-288-1321'],
+                    ['Best Buy (Brant)', 43.3479495, -79.7983553, '905-332-4758'],
+                    ['Best Buy (Martindale)', 43.2294583, -79.9459381, '905-304-7624'],
+                    ['Best Buy (Fennell)', 43.230757, -79.8517491, '905-383-6494'],
+                    ['Best Buy (Wentworth)', 43.217606, -79.8650742, '905-385-0272'],
+                    ['Best Buy (Stone Church)', 43.1941875, -79.8151214, '905-667-1633'],
+                    ['Best Buy (Vansickle)', 43.1452946, -79.2949394, '905-378-0333'],
+                    ['Best Buy (Glendale)', 43.1366916, -79.2282921, '905-346-0274'],
+                    ['Best But (Howard)', 42.2748523, -83.008904, '519-946-0712'],
+                    ['Best Buy (Walker)', 42.2579142, -82.9723705, '519-967-2070'],
+                    ['Best Buy (St Clair)', 42.2579142, -82.9723705, '519-354-5525'],
+                    ['Best Buy (Exmouth)', 42.9859652, -82.3593082, '519-542-4388'],
+                    ['Best Buy (Richmond)', 43.0276894, -81.2865729, '519-963-8494'],
+                    ['Best Buy (Wellington)', 42.9320151, -81.2231673, '519-686-2160'],
+                    ['Best Buy (King)', 43.5008415, -80.5333823, '519-886-1073'],
+                    ['Best Buy (Fairway)', 43.4209419, -80.4401334, '519-783-0333'],
+                    ['Best Buy (Pinebush)', 43.4106406, -80.3262395, '519-624-9772'],
+                    ['Best Buy (Stone)', 43.5232386, -80.234557, '519-766-4660'],
+                    ['Best Buy (Lynden)', 43.1743768, -80.2458413, '519-758-1911'],
+                    ['Best Buy (Orangeville)', 43.9291635, -80.1008469, '519-940-8206'],
+                    ['Best Buy (Marcus)', 46.5007216, -80.9461976, '705-664-0070'],
+                    ['Best Buy (Great Northern)', 46.5418944, -84.3206406, '705-942-0722'],
+                    ['Best Buy (Kanata)', 45.310718, -75.9114895, '613-287-3912'],
+                    ['Best Buy (Memorial)', 48.4132179, -89.246185, '807-346-1900'],
+                    ['Best Buy (Riverside)', 48.4728287, -81.3785819, '(705) 268-9111'],
+                    ['Best Buy (Fisher)', 46.3135108, -79.4454881, '(705) 472-2126)'],
+                    ['Best Buy (Tollgate)', 45.0337651, -74.7460353, '(613) 932-1058'],
+
+                    //Toronto Only E-waste
+                    ['Salvation Army - Toronto Parkdale Thrift Store', 43.6400587, -79.4395666, '416-536-3361'],
+                    ['Staples (Stock Yards)', 43.670491, -79.4686089, '416.762.2816'],
+
+                    ['Salvation Army - Toronto Weston Thrift Store', 43.7012193, -79.505111, '416-247-0505'],
+                    ['Staples (Dufferin Street)', 43.7172731, -79.4584292, '416-785-5335'],
+                    ['Best Buy Canada - Downsview (Wilson Ave)', 43.7321345, -79.4568804, '(416) 635-6574'],
+                    ['Salvation Army - Scarborough West', 43.7252098, -79.2968082, '416-752-2929'],
+                    ['Staples (Eglinton Avenue)', 43.7141535, -79.3605171, '416-696-0043'],
+                    ['Best Buy Canada - Leaside (Laird Dr)', 43.7094623, -79.3646043, '(647) 777-3196'],
+                    ['Best Buy - Yonge & Eglinton (Yonge Street)', 43.7101939, -79.401772, '(416) 489-4726'],
+                    ['Staples (Danforth Avenue)', 43.6899912, -79.291547, '416-686-4711'],
+                    ['Staples (Gerrard Square)', 43.6697016, -79.341784, '416-466-4900'],
+                    ['Staples (Front Street East)', 43.6517219, -79.366047, '416-368-3331'],
+                    ['Best Buy Canada - Bay & Dundas (Toronto Eaton Centre)', 43.655556, -79.3848541, '(416) 642-8321'],
+                    ['Staples (University)', 43.6550146, -79.3901208, '416-598-4818']
+
+
+                ]
+                //                var contentString = '<div id="content">' +
+                //                    '<div id="siteNotice">' +
+                //                    '</div>' +
+                //                    '<h1 id="firstHeading">' + locations[0][0] + '</h1>' +
+                //                    '<div id="bodyContent">' +
+                //                    '<p>' + locations[0][3] + '</p>' +
+                //                    '</div>' +
+                //                    '</div>';
+                //                //var contentStrings = '<div id = "content">' + 'locations[0][0]'
+
+
+                var x = document.getElementById("demo");
+                var localLat = 0;
+                var localLng = 0;
+
+                function initMap() {
+                    var mapOptions = {
+                        center: new google.maps.LatLng(45.4235937, -75.7031177),
+                        zoom: 11,
+                    }
+                    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+                    var parliamentPos = {
+                        lat: 45.4235937,
+                        lng: -75.7031177
+                    };
+
+
+
+
+                    for (var i = 0; i < locations.length; i++) {
+                        var myPosition = {
+                            lat: locations[i][1],
+                            lng: locations[i][2]
+                        };
+                        var marker = new google.maps.Marker({
+                            position: myPosition,
+                            map: map,
+                            title: 'MyPlace'
+                        });
+                        var contentString = '<div id="content">' +
+                            '<div id="siteNotice">' +
+                            '</div>' +
+                            '<h1 id="firstHeading">' + locations[i][0] + '</h1>' +
+                            '<div id="bodyContent">' +
+                            '<p>' + locations[i][3] + '</p>' +
+                            '</div>' +
+                            '</div>';
+                        var infowindow = new google.maps.InfoWindow({
+                            content: contentString
+                        });
+
+                        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                            return function() {
+                                var contentString2 = '<div id="content">' +
+                                    '<div id="siteNotice">' +
+                                    '</div>' +
+                                    '<h1 id="firstHeading">' + locations[i][0] + '</h1>' +
+                                    '<div id="bodyContent">' +
+                                    '<p>' + locations[i][3] + '</p>' +
+                                    '</div>' +
+                                    '</div>';
+                                infowindow.setContent(contentString2);
+                                infowindow.open(map, marker);
+                            }
+                        })(marker, i));
+
+                        //                        marker.addListener('click', function() {
+                        //                            infowindow.open(map, marker);
+                        //                        });
+                    }
+
+
+                    if (navigator.geolocation) {
+                        navigator.geolocation.getCurrentPosition(showPosition);
+                    } else {
+
+                    }
+
+
+                    function showPosition(position) {
+                        x.innerHTML = "Lat: " + position.coords.latitude +
+                            "<br>Lng: " + position.coords.longitude;
+                        localLat = position.coords.latitude;
+                        console.log(localLat);
+                        localLng = position.coords.longitude;
+                        var myLatLng = {
+                            lat: localLat,
+                            lng: localLng
+                        };
+                        map.setCenter(new google.maps.LatLng(localLat, localLng));
+                    }
+
+
+                    //                    var marker = new google.maps.Marker({
+                    //                        position: myLatLng,
+                    //                        map: map,
+                    //                        title: 'Hello World!'
+                    //                    });
+                    //
+                    //                    marker.addListener('click', function() {
+                    //                        infowindow.open(map, marker);
+                    //                    });
+
+                }
+
+            </script>
+
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHlW8YibL2zp7mdBSNeT81AYVaxHuOk3A&callback=initMap">
+
+
+            </script>
+
+
+        </div>
+        <div id="fixedwidth">
+            <div id="footer">
+                <div id="logodiv2">
+                    <a href='Index.html'>
+                        <p></p>
+                    </a>
+
+                    <a href='Index.html'><img src="Images/Recycle_Ontario_Light.png" width="240px " height="80px " /></a>
+                    <a href='Index.html'>
+                        <p>Back to Top</p>
+                    </a>
+                    <a href='Index.html'>
+                        <p>Home</p>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>

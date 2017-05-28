@@ -2,9 +2,10 @@
        * element that contains the map. */
 
 #map {
-    height: 500px;
+    height: 550px;
     width: 1000px;
 }
+
 #map2 {
     height: 500px;
     width: 1000px;
@@ -34,29 +35,109 @@ html,
     font-family: Delicious4;
     src: url("../extra/Existence-Light.otf");
 }
+
 @font-face {
     font-family: Futura;
     src: url("../extra/FuturaExtended.ttf");
 }
+
 @font-face {
     font-family: RalewayReg;
     src: url("../extra/Raleway/Raleway-Regular.ttf");
 }
+
 @font-face {
     font-family: RalewayLih;
     src: url("../extra/Raleway/Raleway-Light.ttf");
 }
+
 @font-face {
     font-family: RalewayThn;
     src: url("../extra/Raleway/Raleway-Thin.ttf");
 }
+
 @font-face {
     font-family: OpenThn;
     src: url("../extra/Open_Sans/Open_Sans-Light.ttf");
 }
+
 @font-face {
     font-family: OpenBld;
     src: url("../extra/Open_Sans/Open_Sans-ExtraBold.ttf");
+}
+
+#description {
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+#infowindow-content .title {
+    font-weight: bold;
+}
+
+#infowindow-content {
+    display: none;
+}
+
+#map #infowindow-content {
+    display: inline;
+}
+
+.pac-card {
+    margin: 10px 10px 0 0;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    font-family: Roboto;
+}
+
+#pac-container {
+    padding-bottom: 12px;
+    margin-right: 12px;
+}
+
+.pac-controls {
+    display: inline-block;
+    padding: 5px 11px;
+}
+
+.pac-controls label {
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+#pac-input {
+    background-color: #fff;
+    
+    font-family: Roboto;
+    font-size: 25px;
+    font-weight: 300;
+    margin-left: 60px;
+    margin-top: 7px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 600px;
+}
+
+#pac-input:focus {
+    border-color: #4d90fe;
+}
+
+#title {
+    color: #fff;
+    background-color: #4d90fe;
+    font-size: 25px;
+    font-weight: 500;
+    padding: 6px 12px;
+}
+
+#target {
+    width: 345px;
 }
 
 html {
@@ -91,10 +172,9 @@ section:nth-of-type(2) {
     height: 500px;
 }
 
-#firstHeading{
+#firstHeading {
     font-size: 20px;
 }
-
 
 #headerImg>div:nth-of-type(1) {
     background: url(../Images/RecycleBackground1.jpg) no-repeat fixed;
@@ -189,7 +269,6 @@ tr.classname {
     font-size: 40px;
     height: 50px;
     width: 500px;
-    
 }
 
 #gallerybackground {
@@ -255,16 +334,17 @@ tr.classname {
 
 #logodiv {
     padding-top: 0px;
-/*    padding-left: 20px;*/
+    /*    padding-left: 20px;*/
     width: 330px;
     height: 120px;
     float: left;
     display: inline-block z-index:101;
     color: #FFFFFF
 }
+
 #logodiv2 {
     padding-top: 0px;
-/*    padding-left: 20px;*/
+    /*    padding-left: 20px;*/
     width: 100%;
     height: 120px;
     float: left;
@@ -279,9 +359,8 @@ tr.classname {
     background-color: #F7F7F7;
     width: 400px;
     height: 120px;
-    z-index: -1;  
+    z-index: -1;
     text-align: center;
-
 }
 
 #window {
@@ -306,6 +385,7 @@ tr.classname {
     font-size: 30px;
     font-family: Delicious4, sans-serif;
 }
+
 #textWindow {
     width: 100%;
     height: 100%;
@@ -322,10 +402,17 @@ tr.classname {
     padding-top: 0px;
 }
 
-
 #fixedWidth {
     min-width: 1000px;
     margin: 0 auto;
+    width: 1000px;
+}
+
+
+#fixedWidthM {
+    min-width: 1000px;
+    margin: 0 auto;
+    height: 550px;
     width: 1000px;
 }
 
@@ -395,7 +482,7 @@ h2 span {
     overflow: hidden;
     box-shadow: 0px -3px 10px 1px #333333;
     width: 100%;
-    height: 1500px;
+    height: 1000px;
     background-color: #FFFFFF;
     font-style: FuturaKoya, Sans-Serif;
     font-size: 0;
@@ -513,7 +600,7 @@ h2 span {
 
 #Drawing3 {
     float: right;
-   width: 400px;
+    width: 400px;
     height: 400px;
 }
 
@@ -553,6 +640,14 @@ h2 span {
     position: relative;
     width: 1000px;
     height: 230px;
+    background-color: #EEEEEE;
+}
+
+#desclong3 {
+    float: left;
+    position: relative;
+    width: 1000px;
+    height: 150px;
     background-color: #EEEEEE;
 }
 
@@ -668,8 +763,7 @@ h2 span {
     padding-right: 0px;
     font-weight: 100;
     line-height: 140%;
-    letter-spacing: 0.1px; 
-
+    letter-spacing: 0.1px;
     font-family: RalewayReg;
     font-size: 15px;
 }
@@ -678,7 +772,7 @@ h2 span {
     padding-left: 60px;
     padding-right: 60px;
     font-weight: 100;
-    letter-spacing: -1px; 
+    letter-spacing: -1px;
     font-family: RalewayReg, Sans-Serif;
     color: #5c5c5c;
     font-size: 20px;
@@ -807,7 +901,7 @@ h2 span {
     padding: 16px 17px;
     font-family: Delicious4, sans-serif;
     font-weight: 700;
-/*    text-transform: uppercase;*/
+    /*    text-transform: uppercase;*/
     font-size: 14px;
     position: relative;
     -webkit-transition: color .25s;
