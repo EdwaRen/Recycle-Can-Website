@@ -184,8 +184,38 @@ section:nth-of-type(2) {
     font-size: 20px;
 }
 
-#headerImg>div:nth-of-type(1) {
-    background: url(../Images/RecycleBackground1.jpg) no-repeat fixed;
+#headerImgIndex>div:nth-of-type(1) {
+    background: url(../Images/RecycleBackground1.png) no-repeat fixed;
+    background-size: 100%;
+    margin: 0;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+#headerImgEwaste>div:nth-of-type(1) {
+    background: url(../Images/ElectronicsBack.png) no-repeat fixed;
+    background-size: 100%;
+    margin: 0;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+#headerImgBattery>div:nth-of-type(1) {
+    background: url(../Images/BatteriesBack.png) no-repeat fixed;
+    background-size: 100%;
+    margin: 0;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+#headerImgPaint>div:nth-of-type(1) {
+    background: url(../Images/PaintBack.png) no-repeat fixed;
     background-size: 100%;
     margin: 0;
     height: 500px;
@@ -195,6 +225,7 @@ section:nth-of-type(2) {
     width: 100%;
 }
 
+/*
 #headerImg>div:nth-of-type(2) {
     margin: 0;
     height: 500px;
@@ -204,6 +235,7 @@ section:nth-of-type(2) {
     width: 100%;
     opacity: 1;
 }
+*/
 
 section h1 {
     color: #4F9426;
@@ -829,7 +861,7 @@ h2 span {
     font-size: 20px;
 }
 #header33 p {
-    text-align: right;
+    text-align: center;
     padding-left: 00px;
     padding-right: 0px;
     font-weight: 100;
@@ -840,7 +872,7 @@ h2 span {
 }
 
 #header33 h1 {
-    text-align: right;
+    text-align: center;
     padding-left: 60px;
     padding-right: 60px;
     font-weight: 100;
