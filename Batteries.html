@@ -193,12 +193,10 @@
 
                     });
                     
-                    var markers2 = []
+//                    var markers2 = []
 
                     for (var i = 0; i < locationBattery.length; i++) {
-                        
-                        
-                        
+                                                
                         var myPosition = {
                             lat: locationBattery[i][1],
                             lng: locationBattery[i][2]
@@ -208,7 +206,9 @@
                             map: map,
                             title: 'MyPlace'
                         });
-//                        markers.push(marker2);
+                        //markers.push(marker2);
+//                        setMapOnAll(null);
+
                         
                         
 
@@ -231,7 +231,7 @@
                                 var contentString2 = '<div id="content">' +
                                     '<div id="siteNotice">' +
                                     '</div>' +
-                                    '<h1 id="firstHeading">' + locations[i][0] + '</h1>' +
+                                    '<h1 id="firstHeading">' + locationBattery[i][0] + '</h1>' +
                                     '<div id="bodyContent">' +
                                     '<p>' + locationBattery[i][3] + '</p>' + '<p>' + locationBattery[i][4] + '</p>' +
                                     '</div>' +
