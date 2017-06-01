@@ -91,8 +91,13 @@
 
             <div id="desclong3">
                 <div id="header3">
+                    
                     <h1><b>Enter Your Address or Postal Code To Begin</b>
                         <h1>
+
+
+                    
+
 
                 </div>
             </div>
@@ -114,6 +119,8 @@
 
 
             <script>
+                var markers2 = [];
+
                 function initAutocomplete() {
 
                     var map = new google.maps.Map(document.getElementById('map'), {
@@ -192,11 +199,11 @@
                         map.setZoom(12);
 
                     });
-                    
-//                    var markers2 = []
+
+
 
                     for (var i = 0; i < locationBattery.length; i++) {
-                                                
+
                         var myPosition = {
                             lat: locationBattery[i][1],
                             lng: locationBattery[i][2]
@@ -206,11 +213,13 @@
                             map: map,
                             title: 'MyPlace'
                         });
-                        //markers.push(marker2);
-//                        setMapOnAll(null);
 
-                        
-                        
+                        markers2.push(marker2);
+
+                        //                        setMapOnAll(null);
+
+
+
 
                         //The string information for the infobox
                         var contentString = '<div id="content">' +
@@ -250,7 +259,7 @@
 
                     if (navigator.geolocation) {
                         navigator.geolocation.getCurrentPosition(showPosition);
-                        
+
                     } else {
 
                     }
@@ -259,18 +268,57 @@
 
                         localLat = position.coords.latitude;
                         localLng = position.coords.longitude;
-                                            map.setCenter(new google.maps.LatLng(lat1, lng1));
+                        map.setCenter(new google.maps.LatLng(lat1, lng1));
 
 
                     }
 
 
-
-
-
                     marker.addListener('click', function() {
                         infowindow.open(map, marker);
                     });
+
+
+
+
+
+                }
+
+                function addLocationsBattery() {
+                    for (var i = 0; i < locationBattery.length; i++) {
+                        console.log("Adding battery");
+                        var myPosition = {
+                            lat: locationBattery[i][1],
+                            lng: locationBattery[i][2]
+                        };
+                        var marker2 = new google.maps.Marker({
+                            position: myPosition,
+                            map: map,
+                            title: 'MyPlace'
+                        });
+
+                        marker2.setMap(map);
+
+                        markers2.push(marker2);
+                    }
+                }
+
+                function setMapOnAll(map) {
+                    console.log("lmao");
+
+
+
+                    for (var i = 0; i < markers2.length; i++) {
+                        markers2[i].setMap(map);
+                    }
+
+
+                }
+
+
+                function clearMap() {
+                    console.log("WHY DOESNT THIS WORKKOJAIKSDBKSHUDHJBNM");
+                    setMapOnAll(null);
 
                 }
 
@@ -290,10 +338,10 @@
                     </a>
 
                     <a href='Index.html'><img src="Images/Recycle_Ontario_Light.png" width="240px " height="80px " /></a>
-                    <a href='Privacy_Policy.html'>
+                    <a href='Terms_Privacy.html'>
                         <p>© Copyright 2017 Recycle Ontario, inc. Privacy Policy </p>
                     </a>
-                    <a href='Terms_Of_Use.html'>
+                    <a href='Terms_Privacy.html'>
                         <p>Terms of Use</p>
                     </a>
                     <a href='Index.html'>
