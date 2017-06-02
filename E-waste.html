@@ -20,7 +20,7 @@
 
     </script>
 
-    <title>Recycle Ontario</title>
+    <title>Recycle Can</title>
 </head>
 
 
@@ -190,6 +190,9 @@
                         map.setZoom(12);
                     });
 
+//                    var mgr = new MarkerManager(map);
+                    var markers2 = []
+                    
                     for (var i = 0; i < locationEwaste.length; i++) {
                         var myPosition = {
                             lat: locationEwaste[i][1],
@@ -200,6 +203,7 @@
                             map: map,
                             title: 'MyPlace'
                         });
+                        markers2.push(marker2);
 
                         //The string information for the infobox
                         var contentString = '<div id="content">' +
@@ -232,6 +236,9 @@
 
 
                     }
+                    
+//                    mgr.addMarkers(markers);
+//                    mgr.refresh();
 
                     if (navigator.geolocation) {
                         navigator.geolocation.getCurrentPosition(showPosition);
@@ -256,6 +263,8 @@
                     marker.addListener('click', function() {
                         infowindow.open(map, marker);
                     });
+                    
+                    
 
                 }
 
@@ -276,7 +285,7 @@
 
                     <a href='Index.html'><img src="Images/Recycle_Ontario_Light.png" width="240px " height="80px " /></a>
                     <a href='Terms_Privacy.html'>
-                        <p>© Copyright 2017 Recycle Ontario, inc. Privacy Policy </p>
+                        <p>© Copyright 2017 Recycle Can, inc. Privacy Policy </p>
                     </a>
                     <a href='Terms_Privacy.html'>
                         <p>Terms of Use</p>
