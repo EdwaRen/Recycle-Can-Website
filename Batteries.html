@@ -257,21 +257,21 @@
 
                     //Shows position of user if they allow their browser to know their location
 
-                    if (navigator.geolocation) {
-                        navigator.geolocation.getCurrentPosition(showPosition);
-
-                    } else {
-
-                    }
-                    //Shows position of user if they allow their browser to know their location
-                    function showPosition(position) {
-
-                        localLat = position.coords.latitude;
-                        localLng = position.coords.longitude;
-                        map.setCenter(new google.maps.LatLng(lat1, lng1));
-
-
-                    }
+//                    if (navigator.geolocation) {
+//                        navigator.geolocation.getCurrentPosition(showPosition);
+//
+//                    } else {
+//
+//                    }
+//                    //Shows position of user if they allow their browser to know their location
+//                    function showPosition(position) {
+//
+//                        localLat = position.coords.latitude;
+//                        localLng = position.coords.longitude;
+//                        map.setCenter(new google.maps.LatLng(lat1, lng1));
+//
+//
+//                    }
 
 
                     marker.addListener('click', function() {
@@ -339,10 +339,10 @@
 
                     <a href='Index.html'><img src="Images/Recycle_Ontario_Light.png" width="240px " height="80px " /></a>
                     <a href='Terms_Privacy.html'>
-                        <p>© Copyright 2017 Recycle Can, inc. Privacy Policy </p>
+                        <p>© Copyright 2017 Recycle Can, inc.</p>
                     </a>
                     <a href='Terms_Privacy.html'>
-                        <p>Terms of Use</p>
+                        <p>Terms of Use and Privacy Policy</p>
                     </a>
                     <a href='Index.html'>
                         <p>Home</p>

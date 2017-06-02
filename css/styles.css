@@ -384,8 +384,8 @@ tr.classname {
 #logodiv {
     padding-top: 0px;
     /*    padding-left: 20px;*/
-    width: 327px;
-    height: 109px;
+    width: 324px;
+    height: 108px;
     float: left;
     display: inline-block z-index:101;
     color: #FFFFFF
@@ -416,7 +416,7 @@ tr.classname {
     float: left;
     background-color: #F7F7F7;
     width: 300px;
-    height: 109px;
+    height: 108px;
     z-index: -1;
     text-align: center;
 }
