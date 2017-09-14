@@ -12,6 +12,60 @@ class Header extends Component {
     super();
   }
 
+  chooseHeader() {
+    if (this.props.page == 0) {
+      return(
+        <ul>
+          <li className="active"><Link to='/'><span>Home</span></Link></li>
+          <li><Link to='/Ewaste'><span>Ewaste</span></Link></li>
+          <li><Link to='/Battery'><span>Batteries</span></Link></li>
+          <li><Link to='/Paint'><span>Paint</span></Link></li>
+          <li><Link to='/About'><span>About</span></Link></li>
+        </ul>
+      );
+    } else if (this.props.page == 1){
+      return(
+        <ul>
+          <li ><Link to='/'><span>Home</span></Link></li>
+          <li className="active"><Link to='/Ewaste'><span>Ewaste</span></Link></li>
+          <li><Link to='/Battery'><span>Batteries</span></Link></li>
+          <li><Link to='/Paint'><span>Paint</span></Link></li>
+          <li><Link to='/About'><span>About</span></Link></li>
+        </ul>
+      );
+    } else if (this.props.page == 2) {
+      return(
+        <ul>
+          <li ><Link to='/'><span>Home</span></Link></li>
+          <li ><Link to='/Ewaste'><span>Ewaste</span></Link></li>
+          <li className="active"><Link to='/Battery'><span>Batteries</span></Link></li>
+          <li><Link to='/Paint'><span>Paint</span></Link></li>
+          <li><Link to='/About'><span>About</span></Link></li>
+        </ul>
+      );
+    } else if (this.props.page == 3) {
+      return(
+        <ul>
+          <li ><Link to='/'><span>Home</span></Link></li>
+          <li ><Link to='/Ewaste'><span>Ewaste</span></Link></li>
+          <li ><Link to='/Battery'><span>Batteries</span></Link></li>
+          <li className="active"><Link to='/Paint'><span>Paint</span></Link></li>
+          <li><Link to='/About'><span>About</span></Link></li>
+        </ul>
+      );
+    } else if (this.props.page == 4) {
+      return(
+        <ul>
+          <li ><Link to='/'><span>Home</span></Link></li>
+          <li ><Link to='/Ewaste'><span>Ewaste</span></Link></li>
+          <li ><Link to='/Battery'><span>Batteries</span></Link></li>
+          <li ><Link to='/Paint'><span>Paint</span></Link></li>
+          <li className="active"><Link to='/About'><span>About</span></Link></li>
+        </ul>
+      );
+    }
+  }
+
   render() {
 
     const styles = StyleSheet.create({
@@ -30,6 +84,8 @@ class Header extends Component {
 
     });
 
+    console.log("Hi, ", this.props.page);
+
     return (
 
       <div id="header">
@@ -45,13 +101,8 @@ class Header extends Component {
           </div>
 
           <div id="cssmenu">
-            <ul>
-              <li className="active"><Link to='/'><span>Home</span></Link></li>
-              <li><Link to='/Ewaste'><span>Ewaste</span></Link></li>
-              <li><Link to='/Battery'><span>Batteries</span></Link></li>
-              <li><Link to='/Paint'><span>Paint</span></Link></li>
-              <li><Link to='/About'><span>About</span></Link></li>
-            </ul>
+
+            {this.chooseHeader()}
           </div>
 
         </div>

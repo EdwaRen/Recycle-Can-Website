@@ -16,8 +16,9 @@ class About extends Component {
 
 
     }
+
     return (
-      <Header />
+      <Header page = {this.props.page} />
 
     );
   }

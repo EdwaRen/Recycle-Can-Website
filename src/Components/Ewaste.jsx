@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import { Switch, Route } from 'react-router-dom'
 import {Link} from 'react-router';
 
+import Header from './Header';
+
 class Ewaste extends Component {
   constructor() {
     super();
@@ -14,8 +16,9 @@ class Ewaste extends Component {
 
 
     }
+
     return (
-      <div>Ewaste</div>
+      <Header page = {this.props.page}/>
 
     );
   }
