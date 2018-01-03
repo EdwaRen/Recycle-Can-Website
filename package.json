@@ -1,0 +1,22 @@
+{
+  "name": "recycle-can-react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "aphrodite": "^1.2.4",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-google-map": "^3.0.1",
+    "react-google-maps": "^8.0.0",
+    "react-google-maps-loader": "^3.0.1",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.0.13"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

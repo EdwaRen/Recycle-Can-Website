@@ -16778,3 +16778,9 @@ var locationEwaste = [
   [ "Lorne Street Bottle",  50.7144132, -120.3435499, '250-372-3721 ', 'V2H 1N6'],
   [ "A & P Disposal & Recycling",  48.3945513, -123.70113, '250-642-4456 ', 'V9Z 0X6']
 ]
+
+module.exports = {
+  ewaste: locationEwaste,
+  battery: locationBattery,
+  paint: locationPaint,
+};

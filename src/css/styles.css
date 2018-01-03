@@ -14,21 +14,20 @@
 
 /* Optional: Makes the sample page fill the window. */
 
-html,
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
 @font-face {
     font-family: Delicious;
-    src: url("FutureKoya.ttf");
+    src: url("../extra/Existence-Light.otf");
 }
 
 @font-face {
     font-family: Delicious2;
-    src: url("../extra/FuturaExtended.ttf");
+    src: url("../extra/Existence-Light.otf");
 }
 
 @font-face {
     font-family: TimeBurner;
-    src: url("../extra/TimeBurner.ttf");
+    src: url("../extra/Existence-Light.otf");
 }
 
 @font-face {
@@ -38,7 +37,7 @@ html,
 
 @font-face {
     font-family: Futura;
-    src: url("../extra/FuturaExtended.ttf");
+    src: url("../extra/Existence-Light.otf");
 }
 
 @font-face {
@@ -67,12 +66,12 @@ html,
 
 @font-face {
     font-family: OpenThn;
-    src: url("../extra/Open_Sans/Open_Sans-Light.ttf");
+    src: url("../extra/Open_Sans/OpenSans-Light.ttf");
 }
 
 @font-face {
     font-family: OpenBld;
-    src: url("../extra/Open_Sans/Open_Sans-ExtraBold.ttf");
+    src: url("../extra/Open_Sans/OpenSans-ExtraBold.ttf");
 }
 
 #headerFill {
@@ -387,7 +386,7 @@ tr.classname {
     width: 324px;
     height: 108px;
     float: left;
-    display: inline-block z-index:101;
+    display: inline-block;
     color: #FFFFFF
 }
 
@@ -397,7 +396,7 @@ tr.classname {
     width: 100%;
     height: 120px;
     float: left;
-    display: inline-block z-index:101;
+    display: inline-block ;
     color: #FFFFFF
 }
 #logodivBig {
@@ -406,7 +405,7 @@ tr.classname {
     margin-left:  auto;
     margin-right: auto;
     width: 640px;
-    display: inline-block z-index:101;
+    display: inline-block ;
     color: #FFFFFF
 }
 
@@ -644,7 +643,7 @@ h2 span {
     height: 175px;
 }
 
-#Drawing2 p {
+#Drawing2 h1 {
     font-size: 20px;
 }
 
@@ -697,7 +696,7 @@ h2 span {
     color: #FFFFFF;
     padding-left: 10px;
     padding-right: 30px;
-    font-family: Raleway, Sans-Serif;
+    font-family: RalewayBlk, Sans-Serif;
     font-size: 18px;
 }
 
@@ -714,13 +713,6 @@ h2 span {
     position: relative;
     width: 1000px;
     height: 200px;
-    background-color: #EEEEEE;
-}
-#desclongContact {
-    float: left;
-    position: relative;
-    width: 1000px;
-    height: 230px;
     background-color: #EEEEEE;
 }
 
@@ -766,7 +758,7 @@ h2 span {
     float: left;
     position: relative;
     width: 1000px;
-    height: 170px;
+    height: 180px;
     background-color: #EEEEEE;
 }
 
@@ -1028,7 +1020,7 @@ h2 span {
 #header4 h1 {
     padding-left: 30px;
     padding-right: 30px;
-    font-family: Raleway, Sans-Serif;
+    font-family: RalewayBlk, Sans-Serif;
     font-size: 18px;
     line-height: 140%;
     letter-spacing: -1;
