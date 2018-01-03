@@ -7,6 +7,7 @@ import Footer from './Footer';
 // import GoogleMap from './GoogleMap';
 
 import myInfo from '../extra/allLocations.js';
+import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 
 
 
@@ -32,6 +33,15 @@ class Battery extends Component {
 
 
     }
+
+    const MyMapComponent = withScriptjs(withGoogleMap((props) =>
+    <GoogleMap
+      defaultZoom={8}
+      defaultCenter={{ lat: -34.397, lng: 150.644 }}
+      >
+        {props.isMarkerShown && <Marker position={{ lat: -34.397, lng: 150.644 }} />}
+      </GoogleMap>
+    ))
 
     return (
       <div>
@@ -66,15 +76,10 @@ class Battery extends Component {
           <div id="fixedWidth">
 
 
+
             <div id="desclong3">
               <div id="header3">
-
                 <h1><b>Enter Your Address or Postal Code To Begin</b></h1>
-
-
-
-
-
               </div>
             </div>
           </div>
@@ -82,13 +87,16 @@ class Battery extends Component {
 
           <p id="demo"></p>
 
-
-
-
-          <div id="fixedWidthM">
+          <div id="fixedWidthM" style = {{height:"1000px"}}>
             <input id="pac-input" class="controls" type="text" placeholder="Search Box"/>
 
-            <div id="map"></div>
+            <MyMapComponent
+              isMarkerShown
+              googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+              loadingElement={<div style={{ height: `400px`, width: `100%` }} />}
+              containerElement={<div style={{ height: `400px`, width: `100%` }} />}
+              mapElement={<div style={{ height: `400px`, width: `100%` }} />}
+            />
 
             {/* <GoogleMap /> */}
 
@@ -100,8 +108,9 @@ class Battery extends Component {
 
 
           </div>
+          <Footer />
+
         </div>
-        <Footer />
       </div>
 
     );
