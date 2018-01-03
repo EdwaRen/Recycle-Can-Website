@@ -35,7 +35,7 @@ class Battery extends Component {
 
     return (
       <div>
-        <Header page = {this.props.page}/>
+        <Header page = {2}/>
         <section id="headerImgBattery">
           <article>
             <div id="fixedWidth">

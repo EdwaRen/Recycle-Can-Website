@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { Switch, Route } from 'react-router-dom'
 import {Link} from 'react-router';
 
 import Header from './Header';
@@ -25,7 +24,7 @@ class Home extends Component {
 
     return (
       <div>
-        <Header page = {this.props.page} />
+        <Header page = {0}/>
         <section id="headerImgIndex">
           <article>
             <div id="fixedWidth">

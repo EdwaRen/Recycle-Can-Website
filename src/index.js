@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, browserHistory } from 'react-router';
-import { HashRouter } from 'react-router-dom'
+import { Router, Route, hashHistory } from 'react-router';
 
 
 
@@ -30,7 +29,6 @@ ReactDOM.render((
   //   </Switch>
   // </HashRouter>
 
-  <HashRouter  onUpdate={() => window.scrollTo(0, 0)}>
     <App />
-  </HashRouter>
+  // </Router>
 ), document.getElementById('root'));

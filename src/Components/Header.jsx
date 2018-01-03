@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import { Switch, Route } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+import { Router, Route, Link, IndexRoute, hashHistory, browserHistory, DefaultRoute, IndexLink } from 'react-router'
 import '../css/styles.css';
 import { StyleSheet, css } from 'aphrodite/no-important';
 
@@ -16,6 +15,7 @@ class Header extends Component {
     if (this.props.page == 0) {
       return(
         <ul>
+
           <li className="active"><Link to='/'><span>Home</span></Link></li>
           <li><Link to='/Ewaste'><span>Ewaste</span></Link></li>
           <li><Link to='/Battery'><span>Batteries</span></Link></li>
@@ -84,7 +84,7 @@ class Header extends Component {
 
     });
 
-    console.log("Hi, ", this.props.page);
+    // console.log("Hi, ", this.props.page);
 
     return (
 
@@ -96,11 +96,19 @@ class Header extends Component {
           </div>
 
           <div id="logodiv">
-            <a className={css(styles.logoLinkStyle)} href="index.html"> <img src = {RecycleCanLogo} alt="Image Not Found" className={css(styles.logoImageStyle)}/> </a>
+            <a className={css(styles.logoLinkStyle)}><Link to='/'> <img src = {RecycleCanLogo} alt="Image Not Found" className={css(styles.logoImageStyle)}/> </Link></a>
 
           </div>
 
           <div id="cssmenu">
+
+            {/* <Link to='/'><span>Home</span></Link>&nbsp;
+            <Link to='/battery'><span>Home</span></Link> */}
+
+            {/* <li><Link to='/Ewaste'><span>Ewaste</span></Link>&nbsp</li>
+            <li><Link to='/Battery'><span>Batteries</span></Link>&nbsp</li>
+            <li><Link to='/Paint'><span>Paint</span></Link>&nbsp</li>
+            <li><Link to='/About'><span>About</span></Link>&nbsp</li> */}
 
             {this.chooseHeader()}
           </div>
