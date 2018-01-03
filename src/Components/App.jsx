@@ -25,15 +25,19 @@ class App extends Component {
 
   render() {
     return(
-      <main>
-        <Route exact path = "/" component={() => (<Home page={0} />)} />
+    
+
+      <Switch onUpdate={() => window.scrollTo(0, 0)}>
+        {/* <Route exact path = "/" component={() => (<Home page={0} />)} />
         <Route exact path = "/Ewaste" component={() => (<Ewaste page={1} />)} />
-        <Route path = "/Battery" component={() => (<Battery page={2} />)}/>
+        <Route path = "/Battery" component={() => (<Battery page={2} />)}/> */}
         {/* <Route path = "/Paint" component={() => (<Paint page={3} />)} />
         <Route path = "/About" component={() => (<About page={4} />)} />
         <Route path = "/Terms" component={() => (<Ewaste page={5} />)} /> */}
+          <Route exact path = "/" component={() => (<Home page={0} />)}/>
+          <Route exact path = "/battery" component={() => (<Battery page={2} />)} />
 
-      </main>
+        </Switch>
     );
   }
 }
