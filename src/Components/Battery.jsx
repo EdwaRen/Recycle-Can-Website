@@ -28,10 +28,16 @@ class Battery extends Component {
       text: 0,
 
     };
+    // this.deleteRow(lat) = this.deleteRow(lat).bind(this);
+
   }
 
 
+  deleteRow(lat) {
+    console.log("DELETE ROW DETECTED");
 
+    console.log(lat);
+  }
 
 
   render() {
@@ -43,6 +49,15 @@ class Battery extends Component {
     }
 
     var locations = require('../extra/allLocations.js');
+    var locFields = [];
+    for (var i = 0; i < (locations.battery).length; i++) {
+      locFields.push([]);
+    }
+    for (var i = 0; i < (locations.battery).length; i++) {
+      locFields[i]["latitude"] = locations.battery[i][1];
+      locFields[i]["longitude"] = locations.battery[i][2];
+    }
+    console.log(locFields);
 
     // console.log("logging", counter.battery[0][1]);
     this.state.text = locations.battery[0][1];
@@ -53,13 +68,16 @@ class Battery extends Component {
     const google = window.google;
 
 
+
+
     const MyMapComponent = compose(
       withProps({
         googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",
         loadingElement: <div style={{ height: `100%` }} />,
         containerElement: <div style={{ height: `400px` }} />,
         mapElement: <div style={{ height: `100%` }} />,
-        center: { lat: 25.03, lng: 121.6 },
+        center: { lat: 45.4235937, lng: -75.703123 },
+        // 45.4235937,-75.703123
       }),
       withStateHandlers(() => ({
         isOpen: false,
@@ -72,24 +90,35 @@ class Battery extends Component {
       withGoogleMap
     )(props =>
       <GoogleMap
-        defaultZoom={8}
-        defaultCenter={{ lat: 22.6273, lng: 120.3014 }}
+        defaultZoom={11}
+        defaultCenter={{ lat: 45.4235937, lng: -75.703123 }}
         >
-          <Marker
-            position={{ lat: 22.6273, lng: 120.3014 }}
-            onClick={props.onToggleOpen}
-            >
-              {props.isOpen && <InfoBox
-                onCloseClick={props.onToggleOpen}
-                options={{ closeBoxURL: ``, enableEventPropagation: true }}
+          {props.markers.map((marker)=> {
+
+            function handleClick(e) {
+              // this.deleteRow;
+              // (e) => this.deleteRow();
+              console.log("Click detected");
+              // props.onToggleOpen();
+            }
+
+            return (
+              <Marker
+                position={{lat: marker.latitude, lng: marker.longitude}}
+                onClick={() => this.deleteRow("id")}
+                // onClick={() => {this.deleteRow("id"); props.onToggleOpen }}
                 >
-                  <div style={{ backgroundColor: `yellow`, opacity: 0.75, padding: `12px` }}>
-                    <div style={{ fontSize: `16px`, fontColor: `#08233B` }}>
-                      {this.state.text}
-                    </div>
-                  </div>
-                </InfoBox>}
-              </Marker>
+                  {props.isOpen && <InfoBox onCloseClick={props.onToggleOpen} options={{ closeBoxURL: ``, enableEventPropagation: true }}
+                    >
+                      <div style={{ backgroundColor: `yellow`, opacity: 0.75, padding: `12px` }}>
+                        <div style={{ fontSize: `16px`, fontColor: `#08233B` }}>
+                          {this.state.text}
+                        </div>
+                      </div>
+                    </InfoBox>}
+                  </Marker>
+                )
+              })}
             </GoogleMap>
           );
 
@@ -146,6 +175,7 @@ class Battery extends Component {
                     loadingElement={<div style={{ height: `400px`, width: `100%` }} />}
                     containerElement={<div style={{ height: `400px`, width: `100%` }} />}
                     mapElement={<div style={{ height: `400px`, width: `100%` }} />}
+                    markers = {locFields}
                   />
 
                   {/* <GoogleMap /> */}
