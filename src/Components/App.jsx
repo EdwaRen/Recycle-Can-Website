@@ -40,6 +40,14 @@ class App extends Component {
                   <Route path = "/Terms" component={() => (<Ewaste page={5} />)} /> */}
           <Route path = "/" component={Home}/>
           <Route path = "/battery" component={Battery} />
+          <Route path = "/ewaste" component={Ewaste} />
+          <Route path = "/paint" component={Paint} />
+          <Route path = "/about" component={About} />
+          <Route path = "/terms" component={Terms} />
+
+
+
+
         </Router>
     );
   }

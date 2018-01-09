@@ -45,8 +45,11 @@ const AnyReactComponent = ({ text, lat, lng }) =>
   )(props =>
     <GoogleMap
       defaultZoom={11}
-      defaultCenter={{ lat: 41.850033, lng: -87.6500523 }}
+      defaultCenter={{ lat: 45.4235937, lng: -75.7031177 }}
       >
+
+          {/* Paint: 1R3jmt90pLFytzfWEYB2myzsBhkrvwh8JfPn4eImG */}
+          {/* Ewaste: 1ySrhzEk6ubvy7EQZeG7zWEnP4UUNDbhcFviGiHBB */}
         <FusionTablesLayer
           url="http://googlemaps.github.io/js-v2-samples/ggeoxml/cta.kml"
           options={{
@@ -150,7 +153,7 @@ const AnyReactComponent = ({ text, lat, lng }) =>
 
         return (
           <div>
-            {/* <Header page = {2}/> */}
+            <Header page = {2}/>
             <section id="headerImgBattery">
               <article>
                 <div id="fixedWidth">
