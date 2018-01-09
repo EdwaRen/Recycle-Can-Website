@@ -10,6 +10,58 @@
     height: 400px;
     width: 1000px;
 }
+.showhim {
+  /* background-color: #333; */
+  width:150px;
+  height:50px;
+  border-radius: 10px;
+  color: #222;
+  text-align: left;
+  float:left;
+}
+.showhim:hover {
+  /* width:150px; */
+
+}
+.icon {
+  /* position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); */
+  /* margin-left: 5px; */
+  /* top:50%; */
+  width:40px;
+  height:40px;
+  /* background-color: #CCC; */
+  border-radius: 5px;
+  float:left;
+  background-image: url("../Images/recycle2.png");
+  background-size: cover;
+
+
+}
+.showme{
+  float:left;
+  width:110px;
+  height:50px;
+  border-radius: 2px;
+  background-color: #FFF;
+  /* margin-left: 5px; */
+   display: none;
+ }
+ .showme p {
+   padding-left:5px;
+ }
+ .showhim:hover .showme{
+   display : block;
+ }
+ .showhim:hover{
+   display : block;
+ }
+ .showhim:hover .ok{
+   display : none;
+ }
 
 
 /* Optional: Makes the sample page fill the window. */

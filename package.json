@@ -5,15 +5,22 @@
   "dependencies": {
     "aphrodite": "^1.2.4",
     "gh-pages": "^1.1.0",
+    "google-map-react": "^0.27.0",
+    "google-maps-react": "^1.1.2",
+    "invariant": "^2.2.2",
+    "prop-types": "^15.6.0",
     "react": "^15.6.1",
+    "react-controllables": "^0.6.0",
     "react-dom": "^15.6.1",
     "react-google-map": "^3.0.1",
     "react-google-maps": "latest",
     "react-google-maps-loader": "latest",
+    "react-pure-render": "^1.0.2",
     "react-router": "3.0.4",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.13",
-    "recompose": "latest"
+    "recompose": "latest",
+    "redux": "^3.7.2"
   },
   "scripts": {
     "predeploy": "npm run build",
