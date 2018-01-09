@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<NetworkLink>
+<name><![CDATA[paint]]></name>
+<Link>
+<href>
+https://fusiontables.google.com/exporttable?query=select+col1+from+1R3jmt90pLFytzfWEYB2myzsBhkrvwh8JfPn4eImG&amp;o=kmllink&amp;g=col1&amp;styleId=2&amp;templateId=2</href>
+</Link>
+</NetworkLink>
+</kml>

@@ -11,6 +11,9 @@
     width: 1000px;
 }
 .showhim {
+  z-index: 1;
+  position: absolute;
+
   /* background-color: #333; */
   width:150px;
   height:50px;
@@ -42,25 +45,27 @@
 
 }
 .showme{
+  z-index: 999;
+  position: absolute;
   float:left;
   width:110px;
   height:50px;
   border-radius: 2px;
   background-color: #FFF;
   /* margin-left: 5px; */
-   display: none;
+   opacity: 0;
  }
  .showme p {
    padding-left:5px;
  }
  .showhim:hover .showme{
-   display : block;
+   opacity : 1;
  }
  .showhim:hover{
-   display : block;
+   opacity : 1;
  }
  .showhim:hover .ok{
-   display : none;
+   opacity : 0;
  }
 
 
