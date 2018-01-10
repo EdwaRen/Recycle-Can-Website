@@ -43,7 +43,7 @@ class App extends Component {
           <Route path = "/ewaste" component={Ewaste} />
           <Route path = "/paint" component={Paint} />
           <Route path = "/about" component={About} />
-          <Route path = "/terms" component={Terms} />
+          <Route path = "/terms_privacy" component={Terms} />
 
 
 

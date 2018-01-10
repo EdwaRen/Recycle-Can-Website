@@ -16,7 +16,7 @@ const {
 
 const MapWithAFusionTablesLayer = compose(
   withProps({
-    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",
+    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyBipGTaEpZxIOqSRoYJakq64x9BQNjZwJs&v=3.exp&libraries=geometry,drawing,places",
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div style={{ height: `400px` }} />,
     mapElement: <div style={{ height: `100%` }} />,
@@ -70,7 +70,7 @@ const MapWithAFusionTablesLayer = compose(
               <div id="fixedWidth">
                 <div id="window">
                   <div id="textWindow">
-                    <h1> Recycle Your Batteries </h1>
+                    <h1> Recycle Your Ewaste </h1>
                     <h1> </h1>
                   </div>
 

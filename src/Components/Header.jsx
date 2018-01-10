@@ -63,6 +63,16 @@ class Header extends Component {
           <li className="active"><Link to='/About'><span>About</span></Link></li>
         </ul>
       );
+    } else if (this.props.page == 5) {
+      return(
+        <ul>
+          <li ><Link to='/'><span>Home</span></Link></li>
+          <li ><Link to='/Ewaste'><span>Ewaste</span></Link></li>
+          <li ><Link to='/Battery'><span>Batteries</span></Link></li>
+          <li ><Link to='/Paint'><span>Paint</span></Link></li>
+          <li ><Link to='/About'><span>About</span></Link></li>
+        </ul>
+      );
     }
   }
 

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import { Switch, Route } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+// import { Switch, Route } from 'react-router-dom'
+import { Router, Route, Link, IndexRoute, hashHistory, browserHistory, DefaultRoute, IndexLink } from 'react-router'
 import '../css/styles.css';
 import { StyleSheet, css } from 'aphrodite/no-important';
 
@@ -48,9 +48,9 @@ class Footer extends Component {
 
                   <a href='Index.html'><img src={RecycleCanLight} className = {css(styles.logoImageStyle)} /></a>
                   <p>© Copyright 2017 Recycle Can, inc.</p>
-                  <a href='Terms_Privacy.html'>
-                      <p>Terms of Use and Privacy Policy</p>
-                  </a>
+
+                      <p><Link to='/terms_privacy'><span style = {{color:'#FFF'}}>Terms of Use and Privacy Policy</span></Link></p>
+
                   <a href='https://github.com/EdwaRen/Recycle_Can_Website'><img src={GitHubLogo} className = {css(styles.gitHubLogoStyle)} />
 
                   </a>
