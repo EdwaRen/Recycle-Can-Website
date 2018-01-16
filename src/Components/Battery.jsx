@@ -42,67 +42,70 @@ const AnyReactComponent = ({ text, lat, lng }) =>
       loadingElement: <div style={{ height: `100%` }} />,
       containerElement: <div style={{ height: `400px` }} />,
       mapElement: <div style={{ height: `100%` }} />,
-    }), lifecycle({
-    componentWillMount() {
-      const refs = {}
-
-      this.setState({
-        bounds: null,
-        center: {
-          lat: 41.9, lng: -87.624
-        },
-        markers: [],
-        onMapMounted: ref => {
-          refs.map = ref;
-        },
-        onBoundsChanged: () => {
-          this.setState({
-            bounds: refs.map.getBounds(),
-            center: refs.map.getCenter(),
-          })
-        },
-        onSearchBoxMounted: ref => {
-          refs.searchBox = ref;
-        },
-        onPlacesChanged: () => {
-          const places = refs.searchBox.getPlaces();
-          const bounds = new google.maps.LatLngBounds();
-
-          places.forEach(place => {
-            if (place.geometry.viewport) {
-              bounds.union(place.geometry.viewport)
-            } else {
-              bounds.extend(place.geometry.location)
-            }
-          });
-          const nextMarkers = places.map(place => ({
-            position: place.geometry.location,
-          }));
-          const nextCenter = _.get(nextMarkers, '0.position', this.state.center);
-
-          this.setState({
-            center: nextCenter,
-            markers: nextMarkers,
-          });
-          // refs.map.fitBounds(bounds);
-        },
-      })
-    },
-  }),
+    }),
+  //    lifecycle({
+  //   // componentWillMount() {
+  //   //   const refs = {}
+  //   //
+  //   //   this.setState({
+  //   //     bounds: null,
+  //   //     center: {
+  //   //       // defaultCenter={{ lat: 45.4235937, lng: -75.7031177 }}
+  //   //
+  //   //       lat: 45.4235937, lng: -75.7031177
+  //   //     },
+  //   //     markers: [],
+  //   //     onMapMounted: ref => {
+  //   //       refs.map = ref;
+  //   //     },
+  //   //     onBoundsChanged: () => {
+  //   //       this.setState({
+  //   //         bounds: refs.map.getBounds(),
+  //   //         center: refs.map.getCenter(),
+  //   //       })
+  //   //     },
+  //   //     onSearchBoxMounted: ref => {
+  //   //       refs.searchBox = ref;
+  //   //     },
+  //   //     onPlacesChanged: () => {
+  //   //       const places = refs.searchBox.getPlaces();
+  //   //       const bounds = new google.maps.LatLngBounds();
+  //   //
+  //   //       places.forEach(place => {
+  //   //         if (place.geometry.viewport) {
+  //   //           bounds.union(place.geometry.viewport)
+  //   //         } else {
+  //   //           bounds.extend(place.geometry.location)
+  //   //         }
+  //   //       });
+  //   //       const nextMarkers = places.map(place => ({
+  //   //         position: place.geometry.location,
+  //   //       }));
+  //   //       const nextCenter = _.get(nextMarkers, '0.position', this.state.center);
+  //   //
+  //   //       this.setState({
+  //   //         center: nextCenter,
+  //   //         markers: nextMarkers,
+  //   //       });
+  //   //       // refs.map.fitBounds(bounds);
+  //   //     },
+  //   //   })
+  //   // },
+  // }),
     withScriptjs,
     withGoogleMap
   )(props =>
     <GoogleMap
-    ref={props.onMapMounted}
-    defaultZoom={15}
+    // ref={props.onMapMounted}
+    defaultZoom={11}
     center={props.center}
-    onBoundsChanged={props.onBoundsChanged}
+    // onBoundsChanged={props.onBoundsChanged}
   >
     {/* <GoogleMap
       defaultZoom={11}
       defaultCenter={{ lat: 45.4235937, lng: -75.7031177 }}
       > */}
-        <SearchBox
+        {/* <SearchBox
           ref={props.onSearchBoxMounted}
           bounds={props.bounds}
           controlPosition={google.maps.ControlPosition.TOP_LEFT}
@@ -110,7 +113,7 @@ const AnyReactComponent = ({ text, lat, lng }) =>
           >
             <input
               type="text"
-              placeholder="Customized your placeholder"
+              placeholder="Search ..."
               style={{
                 boxSizing: `border-box`,
                 border: `1px solid transparent`,
@@ -125,7 +128,7 @@ const AnyReactComponent = ({ text, lat, lng }) =>
                 textOverflow: `ellipses`,
               }}
             />
-          </SearchBox>
+          </SearchBox> */}
 
           {/* Paint: 1R3jmt90pLFytzfWEYB2myzsBhkrvwh8JfPn4eImG */}
           {/* Ewaste: 1ySrhzEk6ubvy7EQZeG7zWEnP4UUNDbhcFviGiHBB */}
