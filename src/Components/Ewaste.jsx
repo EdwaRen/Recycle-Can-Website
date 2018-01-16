@@ -91,7 +91,7 @@ const MapWithAFusionTablesLayer = compose(
         url="http://googlemaps.github.io/js-v2-samples/ggeoxml/cta.kml"
         options={{
           query: {
-            select: `name`,
+            select: `Name`,
             from: `1ySrhzEk6ubvy7EQZeG7zWEnP4UUNDbhcFviGiHBB`
           }
         }}
@@ -104,13 +104,13 @@ const MapWithAFusionTablesLayer = compose(
         >
           <input
             type="text"
-            placeholder="Customized your placeholder"
+            placeholder="Search ..."
             style={{
               boxSizing: `border-box`,
               border: `1px solid transparent`,
               width: `240px`,
-              height: `32px`,
-              marginTop: `27px`,
+              height: `30px`,
+              marginTop: `9px`,
               padding: `0 12px`,
               borderRadius: `3px`,
               boxShadow: `0 2px 6px rgba(0, 0, 0, 0.3)`,
@@ -172,7 +172,7 @@ const MapWithAFusionTablesLayer = compose(
               <p id="demo"></p>
 
               <div id="fixedWidthM" style = {{width:"100%"}}>
-                <input id="pac-input" class="controls" type="text" placeholder="Search Box"/>
+                <input id="pac-input" class="controls" type="text" placeholder="Search Box" disabled style = {{opacity:'0'}}/>
                 <div style = {{backgroundColor:"#333"}} />
 
                 {/* 45.248786,-76.3607093 */}

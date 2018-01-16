@@ -5,14 +5,17 @@ import {Link} from 'react-router';
 import Header from './Header';
 import Footer from './Footer';
 
+const google = window.google;
+const _ = require("lodash");
 
-const { compose, withProps } = require("recompose");
+const { compose, withProps, lifecycle } = require("recompose");
 const {
   withScriptjs,
   withGoogleMap,
   GoogleMap,
   FusionTablesLayer,
 } = require("react-google-maps");
+const { SearchBox } = require("react-google-maps/lib/components/places/SearchBox");
 
 const MapWithAFusionTablesLayer = compose(
   withProps({
@@ -21,12 +24,65 @@ const MapWithAFusionTablesLayer = compose(
     containerElement: <div style={{ height: `400px` }} />,
     mapElement: <div style={{ height: `100%` }} />,
   }),
+  lifecycle({
+    componentWillMount() {
+      const refs = {}
+
+      this.setState({
+        bounds: null,
+        center: {
+          lat: 45.4235937, lng: -75.7031177
+        },
+        markers: [],
+        onMapMounted: ref => {
+          refs.map = ref;
+        },
+        onBoundsChanged: () => {
+          this.setState({
+            bounds: refs.map.getBounds(),
+            center: refs.map.getCenter(),
+          })
+        },
+        onSearchBoxMounted: ref => {
+          refs.searchBox = ref;
+        },
+        onPlacesChanged: () => {
+          const places = refs.searchBox.getPlaces();
+          const bounds = new google.maps.LatLngBounds();
+
+          places.forEach(place => {
+            if (place.geometry.viewport) {
+              bounds.union(place.geometry.viewport)
+            } else {
+              bounds.extend(place.geometry.location)
+            }
+          });
+          const nextMarkers = places.map(place => ({
+            position: place.geometry.location,
+          }));
+          const nextCenter = _.get(nextMarkers, '0.position', this.state.center);
+
+          this.setState({
+            center: nextCenter,
+            markers: nextMarkers,
+          });
+          // refs.map.fitBounds(bounds);
+        },
+      })
+    },
+  }),
   withScriptjs,
   withGoogleMap
 )(props =>
   <GoogleMap
+    ref={props.onMapMounted}
+
     defaultZoom={11}
     defaultCenter={{ lat: 45.4235937, lng: -75.7031177 }}
+    center={props.center}
+
+    // onBoundsChanged={props.onBoundsChanged}
+
     >
 
       {/* Paint: 1R3jmt90pLFytzfWEYB2myzsBhkrvwh8JfPn4eImG */}
@@ -35,13 +91,38 @@ const MapWithAFusionTablesLayer = compose(
         url="http://googlemaps.github.io/js-v2-samples/ggeoxml/cta.kml"
         options={{
           query: {
-            select: `name`,
-            from: `1R3jmt90pLFytzfWEYB2myzsBhkrvwh8JfPn4eImG`
+            select: `Name`,
+            from: `1R3jmt90pLFytzfWEYB2myzsBhkrvwh8JfPn4eImG`,
+            // where: `Latitude ==0`
           }
         }}
       />
-    </GoogleMap>
-  );
+      <SearchBox
+        ref={props.onSearchBoxMounted}
+        bounds={props.bounds}
+        controlPosition={google.maps.ControlPosition.TOP_LEFT}
+        onPlacesChanged={props.onPlacesChanged}
+        >
+          <input
+            type="text"
+            placeholder="Search ..."
+            style={{
+              boxSizing: `border-box`,
+              border: `1px solid transparent`,
+              width: `240px`,
+              height: `30px`,
+              marginTop: `9px`,
+              padding: `0 12px`,
+              borderRadius: `3px`,
+              boxShadow: `0 2px 6px rgba(0, 0, 0, 0.3)`,
+              fontSize: `14px`,
+              outline: `none`,
+              textOverflow: `ellipses`,
+            }}
+          />
+        </SearchBox>
+      </GoogleMap>
+    );
 
 
 class Paint extends Component {
@@ -93,7 +174,7 @@ class Paint extends Component {
           <p id="demo"></p>
 
           <div id="fixedWidthM" style = {{width:"100%"}}>
-            <input id="pac-input" class="controls" type="text" placeholder="Search Box"/>
+            <input id="pac-input" class="controls" type="text" placeholder="Search Box" disabled style = {{opacity:'0'}}/>
             <div style = {{backgroundColor:"#333"}} />
 
             {/* 45.248786,-76.3607093 */}

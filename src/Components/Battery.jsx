@@ -6,143 +6,125 @@ import Header from './Header';
 import Footer from './Footer';
 // import GoogleMap from './GoogleMap';
 
-import myInfo from '../extra/allLocations.js';
-// import GoogleMapReact from 'google-map-react';
-// import InfoBox from "react-google-maps/lib/components/addons/InfoBox";
-
-// import { MarkerWithLabel } from "react-google-maps/lib/components/addons/MarkerWithLabel";
-// import { compose } = require("recompose");
-
-function handleClickMarker(lat, lng) {
-  console.log("CLICKED");
-}
 const google = window.google;
+const _ = require("lodash");
 
-const AnyReactComponent = ({ text, lat, lng }) =>
-<div className = "showhim">
-  <div className = "icon"></div>
-  <div className = "showme">
-    <p>{text}</p>
-  </div> </div>
-  ;
-  const _ = require("lodash");
+const { compose, withProps, lifecycle } = require("recompose");
+const {
+  withScriptjs,
+  withGoogleMap,
+  GoogleMap,
+  FusionTablesLayer,
+} = require("react-google-maps");
+const { SearchBox } = require("react-google-maps/lib/components/places/SearchBox");
 
-  const { compose, withProps, lifecycle } = require("recompose");
-  const {
-    withScriptjs,
-    withGoogleMap,
-    GoogleMap,
-    FusionTablesLayer,
-  } = require("react-google-maps");
-  const { SearchBox } = require("react-google-maps/lib/components/places/SearchBox");
+const MapWithAFusionTablesLayer = compose(
+  withProps({
+    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyBipGTaEpZxIOqSRoYJakq64x9BQNjZwJs&v=3.exp&libraries=geometry,drawing,places",
+    loadingElement: <div style={{ height: `100%` }} />,
+    containerElement: <div style={{ height: `400px` }} />,
+    mapElement: <div style={{ height: `100%` }} />,
+  }),
+  lifecycle({
+    componentWillMount() {
+      const refs = {}
 
-  const MapWithAFusionTablesLayer = compose(
-    withProps({
-      googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyBipGTaEpZxIOqSRoYJakq64x9BQNjZwJs&v=3.exp&libraries=geometry,drawing,places",
-      loadingElement: <div style={{ height: `100%` }} />,
-      containerElement: <div style={{ height: `400px` }} />,
-      mapElement: <div style={{ height: `100%` }} />,
-    }),
-  //    lifecycle({
-  //   // componentWillMount() {
-  //   //   const refs = {}
-  //   //
-  //   //   this.setState({
-  //   //     bounds: null,
-  //   //     center: {
-  //   //       // defaultCenter={{ lat: 45.4235937, lng: -75.7031177 }}
-  //   //
-  //   //       lat: 45.4235937, lng: -75.7031177
-  //   //     },
-  //   //     markers: [],
-  //   //     onMapMounted: ref => {
-  //   //       refs.map = ref;
-  //   //     },
-  //   //     onBoundsChanged: () => {
-  //   //       this.setState({
-  //   //         bounds: refs.map.getBounds(),
-  //   //         center: refs.map.getCenter(),
-  //   //       })
-  //   //     },
-  //   //     onSearchBoxMounted: ref => {
-  //   //       refs.searchBox = ref;
-  //   //     },
-  //   //     onPlacesChanged: () => {
-  //   //       const places = refs.searchBox.getPlaces();
-  //   //       const bounds = new google.maps.LatLngBounds();
-  //   //
-  //   //       places.forEach(place => {
-  //   //         if (place.geometry.viewport) {
-  //   //           bounds.union(place.geometry.viewport)
-  //   //         } else {
-  //   //           bounds.extend(place.geometry.location)
-  //   //         }
-  //   //       });
-  //   //       const nextMarkers = places.map(place => ({
-  //   //         position: place.geometry.location,
-  //   //       }));
-  //   //       const nextCenter = _.get(nextMarkers, '0.position', this.state.center);
-  //   //
-  //   //       this.setState({
-  //   //         center: nextCenter,
-  //   //         markers: nextMarkers,
-  //   //       });
-  //   //       // refs.map.fitBounds(bounds);
-  //   //     },
-  //   //   })
-  //   // },
-  // }),
-    withScriptjs,
-    withGoogleMap
-  )(props =>
-    <GoogleMap
-    // ref={props.onMapMounted}
+      this.setState({
+        bounds: null,
+        center: {
+          lat: 45.4235937, lng: -75.7031177
+        },
+        markers: [],
+        onMapMounted: ref => {
+          refs.map = ref;
+        },
+        onBoundsChanged: () => {
+          this.setState({
+            bounds: refs.map.getBounds(),
+            center: refs.map.getCenter(),
+          })
+        },
+        onSearchBoxMounted: ref => {
+          refs.searchBox = ref;
+        },
+        onPlacesChanged: () => {
+          const places = refs.searchBox.getPlaces();
+          const bounds = new google.maps.LatLngBounds();
+
+          places.forEach(place => {
+            if (place.geometry.viewport) {
+              bounds.union(place.geometry.viewport)
+            } else {
+              bounds.extend(place.geometry.location)
+            }
+          });
+          const nextMarkers = places.map(place => ({
+            position: place.geometry.location,
+          }));
+          const nextCenter = _.get(nextMarkers, '0.position', this.state.center);
+
+          this.setState({
+            center: nextCenter,
+            markers: nextMarkers,
+          });
+          // refs.map.fitBounds(bounds);
+        },
+      })
+    },
+  }),
+  withScriptjs,
+  withGoogleMap
+)(props =>
+  <GoogleMap
+    ref={props.onMapMounted}
+
     defaultZoom={11}
+    defaultCenter={{ lat: 45.4235937, lng: -75.7031177 }}
     center={props.center}
-    // onBoundsChanged={props.onBoundsChanged}
-  >
-    {/* <GoogleMap
-      defaultZoom={11}
-      defaultCenter={{ lat: 45.4235937, lng: -75.7031177 }}
-      > */}
-        {/* <SearchBox
-          ref={props.onSearchBoxMounted}
-          bounds={props.bounds}
-          controlPosition={google.maps.ControlPosition.TOP_LEFT}
-          onPlacesChanged={props.onPlacesChanged}
-          >
-            <input
-              type="text"
-              placeholder="Search ..."
-              style={{
-                boxSizing: `border-box`,
-                border: `1px solid transparent`,
-                width: `240px`,
-                height: `32px`,
-                marginTop: `27px`,
-                padding: `0 12px`,
-                borderRadius: `3px`,
-                boxShadow: `0 2px 6px rgba(0, 0, 0, 0.3)`,
-                fontSize: `14px`,
-                outline: `none`,
-                textOverflow: `ellipses`,
-              }}
-            />
-          </SearchBox> */}
 
-          {/* Paint: 1R3jmt90pLFytzfWEYB2myzsBhkrvwh8JfPn4eImG */}
-          {/* Ewaste: 1ySrhzEk6ubvy7EQZeG7zWEnP4UUNDbhcFviGiHBB */}
-          <FusionTablesLayer
-            url="http://googlemaps.github.io/js-v2-samples/ggeoxml/cta.kml"
-            options={{
-              query: {
-                select: `name`,
-                from: `1Lz_0UDytj1GjkeYJog3cXnecoT4Q6ifHxvQvI62P`
-              }
+    // onBoundsChanged={props.onBoundsChanged}
+
+    >
+
+      {/* Paint: 1R3jmt90pLFytzfWEYB2myzsBhkrvwh8JfPn4eImG */}
+      {/* Ewaste: 1ySrhzEk6ubvy7EQZeG7zWEnP4UUNDbhcFviGiHBB */}
+      <FusionTablesLayer
+        url="http://googlemaps.github.io/js-v2-samples/ggeoxml/cta.kml"
+        options={{
+          query: {
+            select: 'Name',
+            from: `1Lz_0UDytj1GjkeYJog3cXnecoT4Q6ifHxvQvI62P`,
+            // where: 'Name == ListenUp'
+
+          }
+        }}
+      />
+      <SearchBox
+        ref={props.onSearchBoxMounted}
+        bounds={props.bounds}
+        controlPosition={google.maps.ControlPosition.TOP_LEFT}
+        onPlacesChanged={props.onPlacesChanged}
+        >
+          <input
+            type="text"
+            placeholder="Search ..."
+            style={{
+              boxSizing: `border-box`,
+              border: `1px solid transparent`,
+              width: `240px`,
+              height: `30px`,
+              marginTop: `9px`,
+              padding: `0 12px`,
+              borderRadius: `3px`,
+              boxShadow: `0 2px 6px rgba(0, 0, 0, 0.3)`,
+              fontSize: `14px`,
+              outline: `none`,
+              textOverflow: `ellipses`,
             }}
           />
-        </GoogleMap>
-      );
+        </SearchBox>
+      </GoogleMap>
+    );
 
       class Battery extends Component {
         constructor() {
@@ -163,12 +145,13 @@ const AnyReactComponent = ({ text, lat, lng }) =>
         renderMarker(locations) {
           console.log(locations);
           return (
-            <AnyReactComponent
-              // style = {{zIndex:'0'}}
-              lat={locations.latitude}
-              lng={locations.longitude}
-              text={locations.name}
-            />
+            <div></div>
+            // <AnyReactComponent
+            //   // style = {{zIndex:'0'}}
+            //   lat={locations.latitude}
+            //   lng={locations.longitude}
+            //   text={locations.name}
+            // />
           )
 
         }
@@ -275,13 +258,14 @@ const AnyReactComponent = ({ text, lat, lng }) =>
                 <p id="demo"></p>
 
                 <div id="fixedWidthM" style = {{width:"100%"}}>
-                  <input id="pac-input" class="controls" type="text" placeholder="Search Box"/>
+                  <input id="pac-input" class="controls" type="text" placeholder="Search Box" disabled style = {{opacity:'0'}}/>
                   <div style = {{backgroundColor:"#333"}} />
 
                   {/* 45.248786,-76.3607093 */}
 
                   {/* {this.numberFilesToRender()} */}
                   <MapWithAFusionTablesLayer />
+                  {/* <iframe width="100%" height="500px" scrolling="no" frameborder="no" src="https://fusiontables.google.com/embedviz?q=select+col1+from+1Lz_0UDytj1GjkeYJog3cXnecoT4Q6ifHxvQvI62P&amp;viz=MAP&amp;h=false&amp;lat=52.17675630292273&amp;lng=-64.27645688500002&amp;t=1&amp;z=4&amp;l=col1&amp;y=2&amp;tmplt=2&amp;hml=TWO_COL_LAT_LNG"></iframe> */}
                   {/* <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHlW8YibL2zp7mdBSNeT81AYVaxHuOk3A&libraries=places&callback=initAutocomplete" async defer></script> */}
 
 
