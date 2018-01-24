@@ -9,6 +9,10 @@ class Terms extends Component {
   constructor() {
     super();
   }
+  componentDidMount() {
+    window.scrollTo(0,0);
+
+  }
 
   render() {
     const mainDivStyle = {

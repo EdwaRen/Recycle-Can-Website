@@ -135,6 +135,10 @@ const MapWithAFusionTablesLayer = compose(
           };
           // this.deleteRow(lat) = this.deleteRow(lat).bind(this);
         }
+        componentDidMount() {
+          window.scrollTo(0,0);
+
+        }
 
         // 45.4150797,-75.7502815
         static defaultProps = {
@@ -239,27 +243,19 @@ const MapWithAFusionTablesLayer = compose(
                 </div>
               </section>
 
-              <div id="overviewE">
-
-
-
+              <div id="overviewE" style = {{height:"900px"}} >
                 <div id="fixedWidth">
-
-
-
                   <div id="desclong3">
                     <div id="header3">
                       <h1><b>Enter Your Address or Postal Code To Begin</b></h1>
                     </div>
                   </div>
                 </div>
-
-
                 <p id="demo"></p>
 
                 <div id="fixedWidthM" style = {{width:"100%"}}>
                   <input id="pac-input" class="controls" type="text" placeholder="Search Box" disabled style = {{opacity:'0'}}/>
-                  <div style = {{backgroundColor:"#333"}} />
+                  {/* <div style = {{backgroundColor:"#333"}} /> */}
 
                   {/* 45.248786,-76.3607093 */}
 

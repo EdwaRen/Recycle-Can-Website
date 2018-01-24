@@ -13,6 +13,10 @@ class Home extends Component {
   constructor() {
     super();
   }
+  componentDidMount() {
+    window.scrollTo(0,0);
+
+  }
 
   render() {
     const mainDivStyle = {
@@ -129,60 +133,61 @@ class Home extends Component {
             <div id="fixedWidth">
 
               <div id="Drawing2">
-                <a href='About.html'>
-                  <div id="Gallery">
-                    <h1>About</h1>
-                  </div>
-                </a>
-              </div>
-
-              <div id="desc2">
-                <div id="header4">
-                  <h1>See who we are and contact us for any questions</h1>
-
+                <Link to='/About'>
+                <div id="Gallery">
+                  <h1>About</h1>
                 </div>
-              </div>
-            </div>
-
-            <div id="fixedWidth">
-              <div id="Drawing">
-                <img src={MapLocate} width="100%" height="100%" />
-              </div>
-              <div id="desc">
-                <div id="header3">
-                  <h1><b>Use Our Locator To Find A Nearby Collection Site.</b></h1>
-                  <h1>
-                    <a href='E-waste.html'>
-                      <p>For E-Waste</p>
-                    </a>
-                    <a href='Batteries.html'>
-                      <p>For Batteries</p>
-
-                    </a>
-
-                    <a href='Paint.html'>
-                      <p>For Other Hazardous Materials</p>
-
-                    </a>
-                  </h1>
-                </div>
-              </div>
+              </Link>
 
             </div>
 
+            <div id="desc2">
+              <div id="header4">
+                <h1>See who we are and contact us for any questions</h1>
 
+              </div>
+            </div>
+          </div>
 
+          <div id="fixedWidth">
+            <div id="Drawing">
+              <img src={MapLocate} width="100%" height="100%" />
+            </div>
+            <div id="desc">
+              <div id="header3">
+                <h1><b>Use Our Locator To Find A Nearby Collection Site.</b></h1>
+                <h1>
+                  <a href='E-waste.html'>
+                    <p>For E-Waste</p>
+                  </a>
+                  <a href='Batteries.html'>
+                    <p>For Batteries</p>
 
-            <Footer />
+                  </a>
+
+                  <a href='Paint.html'>
+                    <p>For Other Hazardous Materials</p>
+
+                  </a>
+                </h1>
+              </div>
+            </div>
 
           </div>
 
+
+
+
+          <Footer />
+
         </div>
 
-      );
-    }
+      </div>
 
-
+    );
   }
 
-  export default Home;
+
+}
+
+export default Home;
